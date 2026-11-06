@@ -5,7 +5,7 @@
 ## Статус по ориентирам ЧП1
 | Ориентир | Статус | Где |
 |---|---|---|
-| Тема согласована | ✅ AR-05, ответы куратора учтены (классы, организации во 2-й итерации, полное восстановление) | `README.md` |
+| Тема согласована | ✅ AR-05 | `README.md` |
 | Обзор домена | ✅ | `docs/domain.md` |
 | Baseline | ✅ train 0.286, public 0.289 | `case/ways/baseline/` |
 | Smoke арены | ✅ smoke, pytest, freeze/verify, сверка оценки с ареной, runner в Docker | `docs/arena.md`, `results/arena_smoke_*` |
