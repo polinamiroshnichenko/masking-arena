@@ -10,13 +10,13 @@
 | Baseline (regex + замена без склонения) | 0.286 | 0.289 | — (оценивается в финале) |
 | Выращенное решение | — | — | — |
 
-Метрика: `score = H(recall по 10 классам) · φ(precision) · точность восстановления`, [0, 1], maximize ([ADR-0003](docs/adr/0003-metric.md)). Лимит предложенных решений: 120 (предварительно). Кандидатов в журнале: 0. AUC: —.
+Метрика: `score = H(recall по 10 классам) · φ(precision) · точность восстановления`, [0, 1], maximize ([ADR-0003](docs/adr/0003-metric.md)). Две кампании ([ADR-0006](docs/adr/0006-two-campaigns.md)): маскирование (baseline H·φ: train 0.645 / public 0.535) и восстановление (baseline A: train 0.443 / public 0.542). Лимит 90 + 30 решений (предварительно). Кандидатов в журналах: 0. AUC: —.
 
 ## Структура
 ```
 docs/domain.md        обзор домена и классических подходов
 docs/arena.md         арена своими словами + smoke-проверки
-docs/adr/             решения: методология, формат задачи, метрика, данные и split, решатель без LLM
+docs/adr/             решения: методология, формат задачи, метрика, данные и split, решатель без LLM, две кампании
 docs/evolution.md, solution.md, talk.md   разбор эволюции, решение, рассказ (ЧП2–ЧП3)
 case/                 кейс арены (по cases/template): задача, данные, метрика, кампания, baseline
   dataset/            train.jsonl, manifest.json, generator/ (код генератора)
@@ -34,7 +34,7 @@ operator/             закрытый контур оператора: шабл
 
 ```bash
 uv sync
-uv run pytest                                   # 36 тестов; 3 операторских пропускаются без operator/
+uv run pytest                                   # 38 тестов; 3 операторских пропускаются без operator/
 
 # baseline на train → results/baseline/train/{report.json, per_example.jsonl, answers.jsonl}
 uv run python tools/evaluate.py --candidate case/ways/baseline --data case/dataset/train.jsonl --out results/baseline/train

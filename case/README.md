@@ -34,7 +34,7 @@
 [metric/README.md](metric/README.md), [ADR-0003](../docs/adr/0003-metric.md). `score = H(recall по классам) · φ(precision) · точность восстановления`, направление `maximize`. Невалидный ответ = ничего не замаскировано / не восстановлено.
 
 ## Кампания
-[campaign/campaign.md](campaign/campaign.md) (черновик условий до подготовки).
+[campaign/campaign.md](campaign/campaign.md) (черновик условий до подготовки). Маскирование и восстановление выращиваются в двух отдельных кампаниях на тех же данных и том же пакете метрики ([ADR-0006](../docs/adr/0006-two-campaigns.md)); связка проверяется на полном private отдельно.
 
 ## Стартовый кандидат
 [ways/baseline](ways/baseline): регулярные выражения + замена меток без склонения. Train 0.286, public 0.289.

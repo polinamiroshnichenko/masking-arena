@@ -3,7 +3,7 @@
 | Путь | Что | Команда |
 |---|---|---|
 | `baseline/train/` | ответы, статистика по примерам, отчёт baseline на train | README → «Как воспроизвести» |
-| `baseline/public_score.json` | только общий public-score baseline (подробности — у оператора) | `tools/evaluate.py` на `operator/data/public.jsonl` |
+| `baseline/public_score.json` | только общий public-score baseline, в т.ч. по кампаниям mask / unmask (подробности — у оператора) | `tools/evaluate.py` на `operator/data/public.jsonl`; по кампаниям — после `tools/select_task.py` |
 | `metric_sensitivity/` | эталонные и жульнические стратегии, сравнение с F1/F2 | `tools/reference_strategies.py` |
 | `data/train_stats.json` | статистика генерации train (покрытие классов семействами, частоты) | `generate.py` (stderr) |
 | `data/bootstrap_baseline.json` | SE score baseline от размера набора | `tools/bootstrap.py` |

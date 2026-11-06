@@ -217,3 +217,20 @@ def test_aggregate_hand_computed():
 def test_aggregate_requires_statistics_via_script():
     with pytest.raises(subprocess.CalledProcessError):
         run_script("aggregate.py", {"results": [{"example_id": "x", "score": 1.0}]})
+
+
+# --------------------------------------------------------------- отдельные кампании (ADR-0006)
+
+def test_aggregate_mask_only_is_recall_times_penalty():
+    s = st(mask_answer([("Ивановым", "ФИО")] + ORACLE[1:]))
+    rec = [0.5 / 3, 1.0, 1.0]
+    res = aggregate([s], POLICY)
+    assert res["statistics"]["restore_accuracy"] is None
+    assert res["score"] == pytest.approx(3 / sum(1 / r for r in rec))
+
+
+def test_aggregate_unmask_only_is_restore_accuracy():
+    s = st(ua("Уважаемому Иванов Иван Иванович! Звоните: +7 (912) 345-67-89."), UNMASK_EX)
+    res = aggregate([s], POLICY)
+    assert res["statistics"]["recall_class_hmean"] is None
+    assert res["score"] == pytest.approx(0.5)

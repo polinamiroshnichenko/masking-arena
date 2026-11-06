@@ -2,5 +2,9 @@
  "candidate": "baseline",
  "split": "public",
  "dataset": "public-v1",
- "score": 0.2894517013582887
+ "score": 0.2894517013582887,
+ "by_campaign": {
+  "mask": 0.5346,
+  "unmask": 0.5415
+ }
 }
