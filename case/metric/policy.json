@@ -1,0 +1,7 @@
+{
+  "labels": ["ФИО", "АДРЕС", "ТЕЛЕФОН", "EMAIL", "ПАСПОРТ", "СНИЛС", "ИНН", "КАРТА", "СЧЕТ", "ДАТА_РОЖДЕНИЯ"],
+  "precision_floor": 0.9,
+  "precision_penalty_power": 2.0,
+  "partial_credit": 0.5,
+  "max_placeholder_index": 9999
+}

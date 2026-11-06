@@ -1,0 +1,15 @@
+{
+  "kind": "command",
+  "direction": "maximize",
+  "version": "pii-mask-v1-draft",
+  "command": {
+    "argv": ["python", "score.py"],
+    "uses_model": false,
+    "timeout_seconds": 60
+  },
+  "aggregation": {
+    "argv": ["python", "aggregate.py"],
+    "uses_model": false,
+    "timeout_seconds": 600
+  }
+}

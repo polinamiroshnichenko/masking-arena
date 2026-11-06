@@ -1,0 +1,38 @@
+$ python -m evaluator.prepare freeze --metric case/metric --output <tmp>/frozen
+{"action": "freeze", "files": 5, "semantic_tests_run": false}
+$ python -m evaluator.prepare verify --metric <tmp>/frozen
+{"action": "verify", "files": 5, "semantic_tests_run": false}
+$ ls <tmp>/frozen
+aggregate.py
+metric.json
+metric.lock.json
+pii_metric.py
+policy.json
+score.py
+$ python tools/arena_smoke.py --limit 200
+{
+ "metric_package": {
+  "format_version": 1,
+  "files": {
+   "aggregate.py": {
+    "executable": false
+   },
+   "metric.json": {
+    "executable": false
+   },
+   "pii_metric.py": {
+    "executable": false
+   },
+   "policy.json": {
+    "executable": false
+   },
+   "score.py": {
+    "executable": false
+   }
+  }
+ },
+ "examples": 200,
+ "arena_score": 0.2737386113991049,
+ "local_score": 0.2737386113991049,
+ "match": true
+}

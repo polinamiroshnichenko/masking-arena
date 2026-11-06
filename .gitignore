@@ -1,0 +1,16 @@
+__pycache__/
+*.pyc
+.venv/
+.pytest_cache/
+.ruff_cache/
+.DS_Store
+.env
+# клоны арены и курса (README → «Как воспроизвести»)
+external/
+# операторский контур: шаблоны и пулы public/private, секретные сиды, public/private данные и их результаты.
+# Коммитится после финализации кампании (ADR-0004); до этого — только README.
+operator/*
+!operator/README.md
+# закрытые разделы не коммитятся ни под каким именем
+*.private.jsonl
+*.public.jsonl

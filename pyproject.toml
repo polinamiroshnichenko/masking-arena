@@ -1,0 +1,31 @@
+[project]
+name = "pii-masking-arena"
+version = "0.1.0"
+description = "AR-05: маскирование ПДн на границе с внешней моделью — кейс для арены DeepPavlov"
+requires-python = ">=3.12,<3.13"
+# Генератор, метрика и baseline используют только стандартную библиотеку (runner арены — python:3.12-slim).
+dependencies = []
+
+[dependency-groups]
+dev = [
+    "pytest==8.4.2",
+    "ruff==0.14.3",
+    # Независимая проверка эталонного склонения ФИО в тестах генератора; в решатель и метрику не входит.
+    "pymorphy3==2.0.4",
+    "pymorphy3-dicts-ru==2.4.417150.4580142",
+]
+
+[tool.uv]
+package = false
+
+[tool.ruff]
+line-length = 120
+extend-exclude = ["external", "operator"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
+
+[tool.pytest.ini_options]
+testpaths = ["case/tests", "tests"]
+pythonpath = ["case/dataset", "case/metric"]
+addopts = "-p no:cacheprovider"

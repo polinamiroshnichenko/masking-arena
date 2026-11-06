@@ -1,0 +1,2 @@
+image: arena-runner:local (sha256:0bab9c3cc3f1)
+examples: 20, valid JSON answers: 20, total 6.1s, 0.31s per example
