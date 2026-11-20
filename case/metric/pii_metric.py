@@ -49,6 +49,23 @@ def phi(precision: float, policy: dict) -> float:
     return min(1.0, precision / policy["precision_floor"]) ** policy["precision_penalty_power"]
 
 
+def psi(type_accuracy: float, policy: dict) -> float:
+    """Штраф за неверный тип метки (v2): 1 при T ≥ type_floor, далее (T/type_floor)^power.
+
+    T — доля полностью закрытых сущностей, у которых все символы под меткой их эталонного класса.
+    Неверный тип — не утечка (данные спрятаны), поэтому он не уменьшает recall, а штрафуется отдельно,
+    как лишнее маскирование. Без ключа `type_floor` в policy (метрика v1) штрафа нет.
+    """
+    if "type_floor" not in policy:
+        return 1.0
+    return min(1.0, type_accuracy / policy["type_floor"]) ** policy["type_penalty_power"]
+
+
+def type_accuracy(per_class: dict) -> float:
+    full = sum(c["strict"] for c in per_class.values())
+    return sum(c["typed"] for c in per_class.values()) / full if full else 1.0
+
+
 # ------------------------------------------------------------------ mask
 
 def reconstruct(text: str, answer: str, policy: dict) -> list[tuple[int, int, str]]:
@@ -229,7 +246,7 @@ def score_example(example: dict, answer: str, policy: dict) -> dict:
         ents = sum(c["entities"] for c in st["per_class"].values())
         rec = sum(c["credit"] for c in st["per_class"].values()) / ents if ents else 1.0
         prec = st["masked_pii_tokens"] / st["masked_tokens"] if st["masked_tokens"] else 1.0
-        return {"score": rec * phi(prec, policy), "statistics": st}
+        return {"score": rec * phi(prec, policy) * psi(type_accuracy(st["per_class"]), policy), "statistics": st}
     if inp["task"] == "unmask":
         st = score_unmask(ref, answer)
         return {"score": st["correct"] / st["slots"] if st["slots"] else 1.0, "statistics": st}
@@ -244,7 +261,8 @@ def class_mean(values: list[float]) -> float:
 
 
 def aggregate(stats: list[dict], policy: dict) -> dict:
-    """Итог набора: score = H(recall_c) · φ(P) · A, где H — гармоническое среднее по классам.
+    """Итог набора: score = H(recall_c) · φ(P) · ψ(T) · A, где H — гармоническое среднее по классам,
+    ψ(T) — штраф за неверный тип метки (только v2, см. `psi`).
 
     Компонент отсутствующего типа примеров (нет mask или нет unmask) опускается.
     """
@@ -278,10 +296,11 @@ def aggregate(stats: list[dict], policy: dict) -> dict:
     r_macro = sum(recall.values()) / len(recall) if recall else None
     r_class = class_mean(list(recall.values())) if recall else None
     precision = masked_pii / masked if masked else 1.0
+    t_acc = type_accuracy(cls)
     restore = correct / slots if slots else None
     components = []
     if n_mask:
-        components.append(r_class * phi(precision, policy))
+        components.append(r_class * phi(precision, policy) * psi(t_acc, policy))
     if n_unmask:
         components.append(restore)
     if not components:
@@ -292,6 +311,7 @@ def aggregate(stats: list[dict], policy: dict) -> dict:
         "statistics": {
             "recall_class_hmean": r_class, "recall_macro": r_macro, "precision": precision,
             "precision_penalty": phi(precision, policy),
+            "type_accuracy": t_acc, "type_penalty": psi(t_acc, policy),
             "restore_accuracy": restore, "recall_by_class": recall, "strict_recall_by_class": strict,
             "typed_recall_by_class": typed,
             "restore_by_label": {lbl: k / n for lbl, (n, k) in slot_labels.items() if n},

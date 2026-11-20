@@ -1,7 +1,7 @@
 {
   "kind": "command",
   "direction": "maximize",
-  "version": "pii-mask-v1",
+  "version": "pii-mask-v2",
   "command": {
     "argv": [
       "python",

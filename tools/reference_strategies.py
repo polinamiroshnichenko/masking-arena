@@ -82,6 +82,11 @@ def strategy(pair: str, inp: dict, ref: dict) -> str:
             else:
                 spans.append((a, b, lbl))
         return mask_spans(text, spans)
+    if name == "oracle_all_as_fio":  # всё спрятано, но любой класс помечен как ФИО
+        return mask_spans(text, [(a, b, "ФИО") for a, b, _ in gold])
+    if name == "oracle_swap_numeric":  # номера документов перепутаны между собой по кругу
+        swap = {"ПАСПОРТ": "СНИЛС", "СНИЛС": "ИНН", "ИНН": "СЧЕТ", "СЧЕТ": "КАРТА", "КАРТА": "ПАСПОРТ"}
+        return mask_spans(text, [(a, b, swap.get(lbl, lbl)) for a, b, lbl in gold])
     if name == "mask_all_tokens":
         return mask_spans(text, [(m.start(), m.end(), "ФИО") for m in TOKEN_RE.finditer(text)])
     if name == "mask_all_digits_and_capitals":
@@ -132,6 +137,8 @@ def main() -> None:
             "mask_all_digits_and_capitals + oracle",
             "oracle_plus_all_digits + oracle",
             "oracle_fio_surname_only + oracle",
+            "oracle_all_as_fio + oracle",
+            "oracle_swap_numeric + oracle",
         ]
         + [f"oracle_drop_{c} + oracle" for c in ("ФИО", "АДРЕС", "КАРТА")]
         + ["oracle + plain_replace", "oracle + oracle"]

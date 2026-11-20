@@ -157,7 +157,9 @@ def test_mask_everything_is_penalized_by_precision():
     # recall 1, но precision 10/14 ниже порога 0.9 → квадратичный штраф (на train такая стратегия
     # получает 0.15, см. results/metric_sensitivity/strategies.md)
     assert res["precision"] == pytest.approx(10 / 14)
-    assert total([s]) == pytest.approx((10 / 14 / 0.9) ** 2)
+    # v2: все токены под меткой ФИО → ещё и штраф за тип (верен только класс ФИО: 1 из 3 сущностей)
+    assert res["type_accuracy"] == pytest.approx(1 / 3)
+    assert total([s]) == pytest.approx((10 / 14 / 0.9) ** 2 * (1 / 3 / POLICY["type_floor"]) ** 2)
 
 
 def test_missing_whole_class_zeroes_score():
@@ -234,3 +236,26 @@ def test_aggregate_unmask_only_is_restore_accuracy():
     res = aggregate([s], POLICY)
     assert res["statistics"]["recall_class_hmean"] is None
     assert res["score"] == pytest.approx(0.5)
+
+
+# --------------------------------------------------------------- тип метки (метрика v2)
+
+def test_wrong_type_keeps_recall_but_is_penalized():
+    wrong = [(sub, "ФИО") for sub, _ in ORACLE]  # всё спрятано, но под меткой ФИО
+    res = aggregate([st(mask_answer(wrong))], POLICY)["statistics"]
+    assert res["recall_class_hmean"] == pytest.approx(1.0)  # утечки нет
+    assert res["precision"] == pytest.approx(1.0)
+    assert res["type_accuracy"] == pytest.approx(1 / 3)  # верен только тип ФИО (паспорт — одна сущность)
+    assert total([st(mask_answer(wrong))]) == pytest.approx((1 / 3 / POLICY["type_floor"]) ** 2)
+
+
+def test_correct_types_have_no_type_penalty():
+    res = aggregate([st(mask_answer(ORACLE))], POLICY)["statistics"]
+    assert res["type_accuracy"] == pytest.approx(1.0) and res["type_penalty"] == pytest.approx(1.0)
+
+
+def test_v1_policy_ignores_type():
+    v1 = {k: v for k, v in POLICY.items() if not k.startswith("type_")}
+    wrong = [(sub, "ФИО") for sub, _ in ORACLE]
+    s = score_example(MASK_EX, mask_answer(wrong), v1)["statistics"]
+    assert aggregate([s], v1)["score"] == pytest.approx(1.0)
