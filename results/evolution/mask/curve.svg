@@ -19,10 +19,11 @@
 <text x="552.5" y="276" text-anchor="middle">S11</text>
 <text x="600.2" y="276" text-anchor="middle">S12</text>
 <text x="338.0" y="294" text-anchor="middle">номер предложенного решения</text>
-<path class="s" d="M52.0,145.1L99.7,145.1L99.7,51.8L147.3,51.8L147.3,45.3L195.0,45.3L195.0,45.2L242.7,45.2L242.7,45.2L290.3,45.2"/>
+<path class="s" d="M52.0,145.1L99.7,145.1L99.7,51.8L147.3,51.8L147.3,45.3L195.0,45.3L195.0,45.2L242.7,45.2L242.7,45.2L290.3,45.2L290.3,45.2L338.0,45.2"/>
 <circle class="p" cx="75.8" cy="145.1" r="4"><title>S01: 0.5346</title></circle>
 <circle class="p" cx="123.5" cy="51.8" r="4"><title>S02: 0.9689</title></circle>
 <circle class="p" cx="171.2" cy="45.3" r="4"><title>S03: 0.9991</title></circle>
 <circle class="p" cx="218.8" cy="45.2" r="4"><title>S04: 0.9997</title></circle>
 <circle class="p" cx="266.5" cy="45.2" r="4"><title>S05: 0.9994</title></circle>
+<circle class="p" cx="314.2" cy="45.2" r="4"><title>S06: 0.9994</title></circle>
 </svg>

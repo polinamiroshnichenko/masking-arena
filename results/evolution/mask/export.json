@@ -6,10 +6,10 @@
   "stop_reason": null,
   "finalization": null,
   "stopped": false,
-  "proposed": 5,
-  "remaining_proposals": 7,
+  "proposed": 6,
+  "remaining_proposals": 6,
   "running": [],
-  "completed_measurements": 10
+  "completed_measurements": 12
  },
  "candidates": [
   {
@@ -139,6 +139,32 @@
    "resources_source": "unknown",
    "snapshot_error": null,
    "solution_id": "S05"
+  },
+  {
+   "bundle_error": null,
+   "candidate_id": "S06",
+   "change": "Новый каталог ways/robust-x2 (копия robust-x1/S05 + правки): STOP += названия месяцев (род.п.); COMMON_COLLISIONS (люди, жене, музей, улей, аллей, левой, мая и др.) -> неоднозначные; SPEECH_NEXT: неоднозначное имя + глагол речи -> ФИО; STREET_T: ш/пл/мкр без точки; DATE_SHORT: дд.мм.гг только с ключом рождения; расширены проверки shifted_checks.py.",
+   "created_at": "2026-11-20T11:42:30.905214+00:00",
+   "digest": "1a44f16ccc8a32afee473b0b4947f13e9560b9cc9e35a1d38374e682b9911822",
+   "digest_version": 2,
+   "hypothesis": "Разбор train-ошибок S05 (0.99983): единственный заметный остаток — регрессия 'мая' (≈50 вхождений месяца в родительном падеже стали ФИО из-за моего исправления ложной неоднозначности 'яна', которое сняло неоднозначность и с 'мая'), плюс 3 FN неоднозначных имён в нижнем регистре ('ну вера обещала') и 1 FN адреса с типом улицы без точки ('ш Х 171'). Механизм: имена из словаря с падежными формами совпадают с обычными словами (мая, люди, жене, музей, улей, левой...), а общие контекстные признаки (глагол речи после имени) не используются. Исправление: месяцы в родительном падеже в STOP, список коллизий форм имён с обычными словами помечается неоднозначным, имя перед глаголом речи принимается в любом регистре, тип улицы без точки, двузначный год даты рождения по ключу. Ожидание: train >= S05 (0.99983), public >= S05 (0.99945); опровержение: любой новый класс FP ФИО на train.",
+   "parents": [
+    "S05"
+   ],
+   "proposal": 6,
+   "research_resources": {
+    "attribution": "unknown",
+    "total_tokens": null,
+    "model_seconds": null
+   },
+   "resources": {
+    "seconds": 0,
+    "tokens_complete": false,
+    "total_tokens": 0
+   },
+   "resources_source": "unknown",
+   "snapshot_error": null,
+   "solution_id": "S06"
   }
  ],
  "research_usage": null,
@@ -426,6 +452,63 @@
    "score": 0.9994489458538277,
    "solver": null,
    "started_at": "2026-11-20T11:39:16.853975+00:00",
+   "state": "succeeded"
+  },
+  {
+   "candidate_id": "S06",
+   "comparison": {
+    "conditions_id": "pii-mask-v1+pii-mask-runner-1",
+    "dataset_id": "pii-ru-synth-v1-mask",
+    "split": "train",
+    "subset_id": "0aa8d717d8d6cea5244b80e4dd6234fa946a1211b1f1c5a6a2259e17caeca841"
+   },
+   "completion_order": 11,
+   "digest": "1a44f16ccc8a32afee473b0b4947f13e9560b9cc9e35a1d38374e682b9911822",
+   "elapsed_seconds": 275.452965,
+   "error": null,
+   "evidence": {
+    "evaluation_id": "de07309d6a977717f91eb2bc00baa716729851683b70aac5f3e7803195d0165e",
+    "record": "cases/pii-masking-ru/campaigns/mask/runs/S06-train-full.result.json"
+   },
+   "finished_at": "2026-11-20T11:47:08.032139+00:00",
+   "job": "http://host.docker.internal:8111",
+   "judge": {
+    "seconds": 49.251072,
+    "tokens_complete": true,
+    "total_tokens": 0
+   },
+   "measurement_id": "S06-train-full",
+   "proposal_count_at_finish": 6,
+   "score": 0.9999751682352064,
+   "solver": {
+    "seconds": 948.1704707550743,
+    "tokens_complete": true,
+    "total_tokens": 0
+   },
+   "started_at": "2026-11-20T11:42:32.579174+00:00",
+   "state": "succeeded"
+  },
+  {
+   "candidate_id": "S06",
+   "comparison": {
+    "conditions_id": "pii-mask-v1+pii-mask-runner-1",
+    "dataset_id": "pii-ru-synth-v1-mask",
+    "split": "public",
+    "subset_id": "all"
+   },
+   "completion_order": 12,
+   "digest": "1a44f16ccc8a32afee473b0b4947f13e9560b9cc9e35a1d38374e682b9911822",
+   "elapsed_seconds": 120.72959,
+   "error": null,
+   "evidence": null,
+   "finished_at": "2026-11-20T11:49:11.471235+00:00",
+   "job": "public-service",
+   "judge": null,
+   "measurement_id": "S06-public",
+   "proposal_count_at_finish": 6,
+   "score": 0.9994489458538277,
+   "solver": null,
+   "started_at": "2026-11-20T11:47:10.741645+00:00",
    "state": "succeeded"
   }
  ]
