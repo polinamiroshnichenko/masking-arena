@@ -1,7 +1,7 @@
 """Механические проверки правил на вымышленных строках (не из train/public). Запуск: python3 synthetic_checks.py"""
 import json
-import sys
 
+import sys
 sys.path.insert(0, __import__('os').path.dirname(__file__))
 import solve
 

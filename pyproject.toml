@@ -20,7 +20,7 @@ package = false
 
 [tool.ruff]
 line-length = 120
-extend-exclude = ["external", "operator"]
+extend-exclude = ["external", "operator", "results", "data_idd"]
 
 [tool.ruff.lint]
 select = ["E", "F", "I", "UP", "B"]
