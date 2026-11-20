@@ -25,5 +25,5 @@
 ## Адреса (из контейнера исследователя)
 - train: `http://host.docker.internal:{{TRAIN_PORT}}`, токен `/run/secrets/train-token`
 - public: `http://host.docker.internal:{{PUBLIC_PORT}}`, токен `/run/secrets/public-token`
-- private: `http://host.docker.internal:{{PRIVATE_PORT}}`, токен `/run/secrets/private-token` (только `search-readiness` и финальная отправка)
+- private: токена у исследователя нет. Проверку готовности private перед стартом и отправку финалистов выполняет оператор; исследователь после исчерпания лимита фиксирует пакет командой `evaluator.search finalize --bundle` и сообщает путь к нему
 - журнал: `/search/search.sqlite3`

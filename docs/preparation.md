@@ -31,7 +31,7 @@
 | Проверка на реальных документах | `results/real_check/summary.md` — порядок стратегий сохраняется |
 | Smoke арены | `evaluator.smoke` — passed; pytest арены 2007 passed (падают только многопоточные тесты с жёсткими таймаутами и 3 теста ФС macOS) |
 | Приёмка контура на отдельном состоянии и открытых данных (`acceptance`) | propose S01 → train (submit/status/result → журнал) → public (begin, pack, submit, wait → только общий score, finish) → лимит → finalize → private (только статус; оценки и победители — в закрытом record оператора) → другой пакет на private — HTTP 409, тот же пакет — прежний статус без повторного запуска, без токена — 401; `curve` помечает отсутствующие public-оценки |
-| Контейнер исследователя | видит только `/workspace`, `/search`, `/run/secrets`; файлов оператора нет (`/Users` отсутствует); запись в workspace и журнал работает; оценщики доступны по `host.docker.internal` |
+| Контейнер исследователя | видит только `/workspace`, `/search`, `/run/secrets` (токены train и public; private-токен с 2026-11-20 только у оператора); файлов оператора нет (`/Users` отсутствует); запись в workspace и журнал работает; оценщики доступны по `host.docker.internal` |
 | Журналы | инициализированы пустыми: mask — лимит 12, unmask — лимит 6; предложено 0 |
 
 ## Готовность private (`GET /v1/search-readiness`, 2026-11-20)
@@ -44,7 +44,7 @@ uv run python deploy/local/arena_ops.py readiness unmask
 Перед стартом и каждым возобновлением этапа проверка повторяется.
 
 ## Адреса для исследователя
-train / public / private: mask — `http://host.docker.internal:8111/8112/8113`, unmask — `…:8121/8122/8123`; токены — `/run/secrets/{train,public,private}-token`; журнал — `/search/search.sqlite3`. Сервисы слушают только 127.0.0.1 хоста.
+train / public: mask — `http://host.docker.internal:8111/8112`, unmask — `…:8121/8122`; токены — `/run/secrets/{train,public}-token`. Private (8113 / 8123) и его токен — только у оператора; журнал — `/search/search.sqlite3`. Сервисы слушают только 127.0.0.1 хоста.
 
 ## Отличия развёртывания от эталонного и найденные проблемы
 - Оценщики — процессы на хосте (раздел «Сервис без модели» deploy/README), без Compose и gateway: решатель и метрика без LLM.

@@ -335,11 +335,25 @@ def readiness(c: str) -> None:
         raise SystemExit(r.returncode)
 
 
+def submit_private(c: str, bundle: str) -> None:
+    """Отправка пакета финалистов на private — только оператор (private-токена у исследователя нет)."""
+    cfg, p = CONFIG[c], paths(c)
+    readiness(c)
+    url = f"http://127.0.0.1:{cfg['ports']['private']}"
+    tok = str(p["secrets"] / "private-token")
+    for args in (("submit", "--bundle", bundle), ("wait", "--output", str(p["logs"] / "private-status.json"))):
+        r = arena("-m", "evaluator.client", args[0], "--url", url, "--token-file", tok, *args[1:])
+        print(r.stdout.strip() or r.stderr.strip())
+
+
 def main() -> None:
     ap = argparse.ArgumentParser()
-    ap.add_argument("command", choices=("prepare", "start", "stop", "status", "readiness"))
+    ap.add_argument("command", choices=("prepare", "start", "stop", "status", "readiness", "submit-private"))
     ap.add_argument("campaign", choices=tuple(CONFIG))
+    ap.add_argument("--bundle", help="для submit-private: пакет finalize исследователя")
     a = ap.parse_args()
+    if a.command == "submit-private":
+        return submit_private(a.campaign, a.bundle)
     {"prepare": prepare, "start": start, "stop": stop, "status": status, "readiness": readiness}[a.command](a.campaign)
 
 

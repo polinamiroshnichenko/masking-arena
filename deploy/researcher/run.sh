@@ -3,7 +3,9 @@
 #   bash deploy/researcher/run.sh mask start      # первый запуск по start.md кампании
 #   bash deploy/researcher/run.sh mask continue   # продолжить ту же сессию (после лимита подписки Pro)
 # Токен подписки: `claude setup-token`, сохранить в файл (по умолчанию ~/.config/arena/claude-token).
-# В контейнер монтируются только workspace, журнал и submit-токены кампании (ADR-0007).
+# В контейнер монтируются только workspace, журнал и submit-токены train и public (ADR-0007).
+# Private-токена у исследователя нет: проверку готовности и отправку финалистов на private делает оператор
+# (deploy/local/arena_ops.py readiness / submit-private) по пакету, который исследователь фиксирует `finalize`.
 set -euo pipefail
 C=$1; MODE=${2:-start}
 ROOT=$(cd "$(dirname "$0")/../.." && pwd)
@@ -26,7 +28,6 @@ docker run --rm -i --name "pii-researcher-$C-$TS" \
   -v "$O/workspace:/workspace" -v "$O/search:/search" \
   -v "$O/secrets/train-token:/run/secrets/train-token:ro" \
   -v "$O/secrets/public-token:/run/secrets/public-token:ro" \
-  -v "$O/secrets/private-token:/run/secrets/private-token:ro" \
   -v "pii-researcher-$C-home:/home/researcher/.claude" \
   -e CLAUDE_CODE_OAUTH_TOKEN="$(cat "$TOKEN_FILE")" \
   pii-researcher:1 ${RESUME[@]+"${RESUME[@]}"} -p "$PROMPT" --model "$MODEL" --effort "$EFFORT" \

@@ -9,6 +9,7 @@
 - замеры train — через train-сервис (`evaluator.train submit/status/result`), public — `begin` + `evaluator.client pack/submit/wait` + `finish` только с общим score; каждое предложение получает public-оценку;
 - веди `board/methods.md`; findings — в `findings/<S..>.md` кампании;
 - лимит — {{MAX_SOLUTIONS}} предложений; при плато — раунд альтернатив по протоколу, без объявления потолка;
+- Private-токена в контейнере нет: готовность private проверяет оператор (свидетельство — `preparation.md`); после исчерпания лимита зафиксируй K финалистов `evaluator.search finalize --bundle` и остановись — отправку делает оператор;
 - не пытайся читать что-либо вне `/workspace`, `/search` и `/run/secrets`; закрытых данных в контейнере нет.
 
 Практические детали контура (проверено оператором на приёмке):
