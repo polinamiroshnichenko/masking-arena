@@ -8,10 +8,8 @@
   "stopped": false,
   "proposed": 5,
   "remaining_proposals": 7,
-  "running": [
-   "S05-public"
-  ],
-  "completed_measurements": 9
+  "running": [],
+  "completed_measurements": 10
  },
  "candidates": [
   {
@@ -415,11 +413,20 @@
     "split": "public",
     "subset_id": "all"
    },
+   "completion_order": 10,
    "digest": "6176dc44ff188a926b5bc9707485432f1915deae098ad19891588b364775c530",
+   "elapsed_seconds": 120.656657,
+   "error": null,
+   "evidence": null,
+   "finished_at": "2026-11-20T11:41:17.510632+00:00",
    "job": "public-service",
+   "judge": null,
    "measurement_id": "S05-public",
+   "proposal_count_at_finish": 5,
+   "score": 0.9994489458538277,
+   "solver": null,
    "started_at": "2026-11-20T11:39:16.853975+00:00",
-   "state": "running"
+   "state": "succeeded"
   }
  ]
 }

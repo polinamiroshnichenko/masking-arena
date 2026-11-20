@@ -1,4 +1,10 @@
 {
-  "status": "running",
-  "evaluation_id": "13b5f74883c7770546e13a0a7399c4301f323bf35cc3b9537d0c95099e01c077"
+  "status": "complete",
+  "evaluation_id": "13b5f74883c7770546e13a0a7399c4301f323bf35cc3b9537d0c95099e01c077",
+  "scores": [
+    {
+      "candidate_id": "S05",
+      "score": 0.9994489458538277
+    }
+  ]
 }
