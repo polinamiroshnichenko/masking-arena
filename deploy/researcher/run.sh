@@ -17,7 +17,7 @@ CD=/workspace/cases/pii-masking-ru/campaigns/$C
 if [ "$MODE" = start ]; then
   PROMPT=$(cat "$O/workspace/cases/pii-masking-ru/campaigns/$C/start.md"); RESUME=()
 else
-  PROMPT="Продолжай кампанию $C по $CD/start.md: восстанови состояние из журнала, board/methods.md и findings, затем продолжай поиск."
+  PROMPT="Продолжай кампанию $C по $CD/start.md: восстанови состояние из журнала, board/methods.md и findings, затем продолжай поиск. ВАЖНО про среду: это неинтерактивный режим claude -p — как только ты завершаешь свой ход, процесс заканчивается и все фоновые субагенты, мониторы и ожидания останавливаются (так уже потеряна работа двух исследователей). Поэтому не завершай ход, пока поиск не дошёл до лимита или пока есть незавершённые проверки: запускай субагентов синхронно (без run_in_background) и дожидайся их результата в том же ходе; незавершённые train-проверки из прошлых сессий забери командой evaluator.train result по evaluation_id из runs/."
   RESUME=(--continue)
 fi
 TS=$(date +%Y%m%d-%H%M%S)

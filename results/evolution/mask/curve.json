@@ -9,7 +9,7 @@
  "integration": "right_step",
  "auc_applicable": true,
  "horizon": 12,
- "actual_proposals": 2,
+ "actual_proposals": 3,
  "running": [],
  "points": [
   {
@@ -37,20 +37,33 @@
    "state": "succeeded",
    "quality": 0.9689156877014243,
    "observed_quality": 0.9689156877014243
+  },
+  {
+   "proposal": 3,
+   "proposals": 3,
+   "solution_id": "S03",
+   "candidate_id": "S03",
+   "measurement_id": "S03-public",
+   "completion_order": 6,
+   "finished_at": "2026-11-20T11:22:03.952355+00:00",
+   "score": 0.9991198084048062,
+   "state": "succeeded",
+   "quality": 0.9991198084048062,
+   "observed_quality": 0.9991198084048062
   }
  ],
- "final_quality": 0.9689156877014243,
+ "final_quality": 0.9991198084048062,
  "complete": false,
  "missing_proposals": [],
  "failed_proposals": [],
  "unproposed_range": [
-  3,
+  4,
   12
  ],
- "missing_count": 10,
+ "missing_count": 9,
  "auc": null,
  "mean_quality": null,
- "observed_auc": 1.50348111304231,
+ "observed_auc": 2.502600921447116,
  "observed_from": 1,
- "covered_proposals": 2
+ "covered_proposals": 3
 }

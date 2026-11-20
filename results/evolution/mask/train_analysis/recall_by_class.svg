@@ -3,47 +3,58 @@
 <text x="10" y="16" font-weight="600">Recall по классам на train (полный набор)</text>
 <rect x="130" y="22" width="10" height="8" fill="#9aa5b1"/><text x="144" y="30">S01</text>
 <rect x="220" y="22" width="10" height="8" fill="#0f5c6e"/><text x="234" y="30">S02</text>
+<rect x="310" y="22" width="10" height="8" fill="#c8902a"/><text x="324" y="30">S03</text>
 <line class="g" x1="130" x2="130" y1="34" y2="298"/><text x="130" y="314" text-anchor="middle">0</text>
 <line class="g" x1="355" x2="355" y1="34" y2="298"/><text x="355" y="314" text-anchor="middle">0.5</text>
 <line class="g" x1="580" x2="580" y1="34" y2="298"/><text x="580" y="314" text-anchor="middle">1</text>
 <text x="122" y="50.0" text-anchor="end">ФИО</text>
-<rect x="130" y="37.0" width="309.9" height="9.0" rx="2" fill="#9aa5b1"><title>S01 ФИО: 0.689</title></rect>
-<rect x="130" y="47.0" width="309.9" height="9.0" rx="2" fill="#0f5c6e"><title>S02 ФИО: 0.689</title></rect>
-<text x="444" y="50.0">0.69 / 0.69</text>
+<rect x="130" y="37.0" width="309.9" height="5.7" rx="2" fill="#9aa5b1"><title>S01 ФИО: 0.689</title></rect>
+<rect x="130" y="43.7" width="309.9" height="5.7" rx="2" fill="#0f5c6e"><title>S02 ФИО: 0.689</title></rect>
+<rect x="130" y="50.3" width="443.9" height="5.7" rx="2" fill="#c8902a"><title>S03 ФИО: 0.986</title></rect>
+<text x="578" y="50.0">0.69 / 0.69 / 0.99</text>
 <text x="122" y="76.0" text-anchor="end">АДРЕС</text>
-<rect x="130" y="63.0" width="148.4" height="9.0" rx="2" fill="#9aa5b1"><title>S01 АДРЕС: 0.330</title></rect>
-<rect x="130" y="73.0" width="447.5" height="9.0" rx="2" fill="#0f5c6e"><title>S02 АДРЕС: 0.994</title></rect>
-<text x="582" y="76.0">0.33 / 0.99</text>
+<rect x="130" y="63.0" width="148.4" height="5.7" rx="2" fill="#9aa5b1"><title>S01 АДРЕС: 0.330</title></rect>
+<rect x="130" y="69.7" width="447.5" height="5.7" rx="2" fill="#0f5c6e"><title>S02 АДРЕС: 0.994</title></rect>
+<rect x="130" y="76.3" width="447.5" height="5.7" rx="2" fill="#c8902a"><title>S03 АДРЕС: 0.994</title></rect>
+<text x="582" y="76.0">0.33 / 0.99 / 0.99</text>
 <text x="122" y="102.0" text-anchor="end">ТЕЛЕФОН</text>
-<rect x="130" y="89.0" width="445.7" height="9.0" rx="2" fill="#9aa5b1"><title>S01 ТЕЛЕФОН: 0.990</title></rect>
-<rect x="130" y="99.0" width="450.0" height="9.0" rx="2" fill="#0f5c6e"><title>S02 ТЕЛЕФОН: 1.000</title></rect>
-<text x="584" y="102.0">0.99 / 1.00</text>
+<rect x="130" y="89.0" width="445.7" height="5.7" rx="2" fill="#9aa5b1"><title>S01 ТЕЛЕФОН: 0.990</title></rect>
+<rect x="130" y="95.7" width="450.0" height="5.7" rx="2" fill="#0f5c6e"><title>S02 ТЕЛЕФОН: 1.000</title></rect>
+<rect x="130" y="102.3" width="450.0" height="5.7" rx="2" fill="#c8902a"><title>S03 ТЕЛЕФОН: 1.000</title></rect>
+<text x="584" y="102.0">0.99 / 1.00 / 1.00</text>
 <text x="122" y="128.0" text-anchor="end">EMAIL</text>
-<rect x="130" y="115.0" width="450.0" height="9.0" rx="2" fill="#9aa5b1"><title>S01 EMAIL: 1.000</title></rect>
-<rect x="130" y="125.0" width="450.0" height="9.0" rx="2" fill="#0f5c6e"><title>S02 EMAIL: 1.000</title></rect>
-<text x="584" y="128.0">1.00 / 1.00</text>
+<rect x="130" y="115.0" width="450.0" height="5.7" rx="2" fill="#9aa5b1"><title>S01 EMAIL: 1.000</title></rect>
+<rect x="130" y="121.7" width="450.0" height="5.7" rx="2" fill="#0f5c6e"><title>S02 EMAIL: 1.000</title></rect>
+<rect x="130" y="128.3" width="450.0" height="5.7" rx="2" fill="#c8902a"><title>S03 EMAIL: 1.000</title></rect>
+<text x="584" y="128.0">1.00 / 1.00 / 1.00</text>
 <text x="122" y="154.0" text-anchor="end">ПАСПОРТ</text>
-<rect x="130" y="141.0" width="342.4" height="9.0" rx="2" fill="#9aa5b1"><title>S01 ПАСПОРТ: 0.761</title></rect>
-<rect x="130" y="151.0" width="450.0" height="9.0" rx="2" fill="#0f5c6e"><title>S02 ПАСПОРТ: 1.000</title></rect>
-<text x="584" y="154.0">0.76 / 1.00</text>
+<rect x="130" y="141.0" width="342.4" height="5.7" rx="2" fill="#9aa5b1"><title>S01 ПАСПОРТ: 0.761</title></rect>
+<rect x="130" y="147.7" width="450.0" height="5.7" rx="2" fill="#0f5c6e"><title>S02 ПАСПОРТ: 1.000</title></rect>
+<rect x="130" y="154.3" width="450.0" height="5.7" rx="2" fill="#c8902a"><title>S03 ПАСПОРТ: 1.000</title></rect>
+<text x="584" y="154.0">0.76 / 1.00 / 1.00</text>
 <text x="122" y="180.0" text-anchor="end">СНИЛС</text>
-<rect x="130" y="167.0" width="318.6" height="9.0" rx="2" fill="#9aa5b1"><title>S01 СНИЛС: 0.708</title></rect>
-<rect x="130" y="177.0" width="450.0" height="9.0" rx="2" fill="#0f5c6e"><title>S02 СНИЛС: 1.000</title></rect>
-<text x="584" y="180.0">0.71 / 1.00</text>
+<rect x="130" y="167.0" width="318.6" height="5.7" rx="2" fill="#9aa5b1"><title>S01 СНИЛС: 0.708</title></rect>
+<rect x="130" y="173.7" width="450.0" height="5.7" rx="2" fill="#0f5c6e"><title>S02 СНИЛС: 1.000</title></rect>
+<rect x="130" y="180.3" width="450.0" height="5.7" rx="2" fill="#c8902a"><title>S03 СНИЛС: 1.000</title></rect>
+<text x="584" y="180.0">0.71 / 1.00 / 1.00</text>
 <text x="122" y="206.0" text-anchor="end">ИНН</text>
-<rect x="130" y="193.0" width="400.5" height="9.0" rx="2" fill="#9aa5b1"><title>S01 ИНН: 0.890</title></rect>
-<rect x="130" y="203.0" width="450.0" height="9.0" rx="2" fill="#0f5c6e"><title>S02 ИНН: 1.000</title></rect>
-<text x="584" y="206.0">0.89 / 1.00</text>
+<rect x="130" y="193.0" width="400.5" height="5.7" rx="2" fill="#9aa5b1"><title>S01 ИНН: 0.890</title></rect>
+<rect x="130" y="199.7" width="450.0" height="5.7" rx="2" fill="#0f5c6e"><title>S02 ИНН: 1.000</title></rect>
+<rect x="130" y="206.3" width="450.0" height="5.7" rx="2" fill="#c8902a"><title>S03 ИНН: 1.000</title></rect>
+<text x="584" y="206.0">0.89 / 1.00 / 1.00</text>
 <text x="122" y="232.0" text-anchor="end">КАРТА</text>
-<rect x="130" y="219.0" width="450.0" height="9.0" rx="2" fill="#9aa5b1"><title>S01 КАРТА: 1.000</title></rect>
-<rect x="130" y="229.0" width="450.0" height="9.0" rx="2" fill="#0f5c6e"><title>S02 КАРТА: 1.000</title></rect>
-<text x="584" y="232.0">1.00 / 1.00</text>
+<rect x="130" y="219.0" width="450.0" height="5.7" rx="2" fill="#9aa5b1"><title>S01 КАРТА: 1.000</title></rect>
+<rect x="130" y="225.7" width="450.0" height="5.7" rx="2" fill="#0f5c6e"><title>S02 КАРТА: 1.000</title></rect>
+<rect x="130" y="232.3" width="450.0" height="5.7" rx="2" fill="#c8902a"><title>S03 КАРТА: 1.000</title></rect>
+<text x="584" y="232.0">1.00 / 1.00 / 1.00</text>
 <text x="122" y="258.0" text-anchor="end">СЧЕТ</text>
-<rect x="130" y="245.0" width="338.0" height="9.0" rx="2" fill="#9aa5b1"><title>S01 СЧЕТ: 0.751</title></rect>
-<rect x="130" y="255.0" width="450.0" height="9.0" rx="2" fill="#0f5c6e"><title>S02 СЧЕТ: 1.000</title></rect>
-<text x="584" y="258.0">0.75 / 1.00</text>
+<rect x="130" y="245.0" width="338.0" height="5.7" rx="2" fill="#9aa5b1"><title>S01 СЧЕТ: 0.751</title></rect>
+<rect x="130" y="251.7" width="450.0" height="5.7" rx="2" fill="#0f5c6e"><title>S02 СЧЕТ: 1.000</title></rect>
+<rect x="130" y="258.3" width="450.0" height="5.7" rx="2" fill="#c8902a"><title>S03 СЧЕТ: 1.000</title></rect>
+<text x="584" y="258.0">0.75 / 1.00 / 1.00</text>
 <text x="122" y="284.0" text-anchor="end">ДАТА_РОЖДЕНИЯ</text>
-<rect x="130" y="271.0" width="159.7" height="9.0" rx="2" fill="#9aa5b1"><title>S01 ДАТА_РОЖДЕНИЯ: 0.355</title></rect>
-<rect x="130" y="281.0" width="450.0" height="9.0" rx="2" fill="#0f5c6e"><title>S02 ДАТА_РОЖДЕНИЯ: 1.000</title></rect>
-<text x="584" y="284.0">0.35 / 1.00</text>
+<rect x="130" y="271.0" width="159.7" height="5.7" rx="2" fill="#9aa5b1"><title>S01 ДАТА_РОЖДЕНИЯ: 0.355</title></rect>
+<rect x="130" y="277.7" width="450.0" height="5.7" rx="2" fill="#0f5c6e"><title>S02 ДАТА_РОЖДЕНИЯ: 1.000</title></rect>
+<rect x="130" y="284.3" width="450.0" height="5.7" rx="2" fill="#c8902a"><title>S03 ДАТА_РОЖДЕНИЯ: 1.000</title></rect>
+<text x="584" y="284.0">0.35 / 1.00 / 1.00</text>
 </svg>

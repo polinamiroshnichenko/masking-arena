@@ -6,10 +6,10 @@
   "stop_reason": null,
   "finalization": null,
   "stopped": false,
-  "proposed": 2,
-  "remaining_proposals": 10,
+  "proposed": 3,
+  "remaining_proposals": 9,
   "running": [],
-  "completed_measurements": 4
+  "completed_measurements": 6
  },
  "candidates": [
   {
@@ -61,6 +61,32 @@
    "resources_source": "unknown",
    "snapshot_error": null,
    "solution_id": "S02"
+  },
+  {
+   "bundle_error": null,
+   "candidate_id": "S03",
+   "change": "Добавлен fio_spans в solve.py: словарь имён (общие знания) с порождением падежей, неоднозначные имена с условиями, отчества/фамилии по суффиксам, NER natasha PER, инициалы, дефисные имена; остальное как S02. Ветка res-names.",
+   "created_at": "2026-11-20T11:15:10.740011+00:00",
+   "digest": "4a922ce4c368da5f1b2a53ee435a95cac9c5b83ffd217af9fb89f6f293789ad2",
+   "digest_version": 2,
+   "hypothesis": "Потери recall ФИО (0.689) вызваны узкими шаблонами baseline: пропускаются склонённые имена/отчества, пары Имя Фамилия, одиночные имена и нижний регистр (чат). Словарь имён с падежными формами + суффиксы отчеств/фамилий + NER natasha PER + инициалы подняют recall ФИО при precision >=0.9. Опровержение: recall ФИО не растёт или precision < 0.9.",
+   "parents": [
+    "S02"
+   ],
+   "proposal": 3,
+   "research_resources": {
+    "attribution": "unknown",
+    "total_tokens": null,
+    "model_seconds": null
+   },
+   "resources": {
+    "seconds": 0,
+    "tokens_complete": false,
+    "total_tokens": 0
+   },
+   "resources_source": "unknown",
+   "snapshot_error": null,
+   "solution_id": "S03"
   }
  ],
  "research_usage": null,
@@ -177,6 +203,63 @@
    "score": 0.9689156877014243,
    "solver": null,
    "started_at": "2026-11-20T10:33:51.714002+00:00",
+   "state": "succeeded"
+  },
+  {
+   "candidate_id": "S03",
+   "comparison": {
+    "conditions_id": "pii-mask-v1+pii-mask-runner-1",
+    "dataset_id": "pii-ru-synth-v1-mask",
+    "split": "train",
+    "subset_id": "0aa8d717d8d6cea5244b80e4dd6234fa946a1211b1f1c5a6a2259e17caeca841"
+   },
+   "completion_order": 5,
+   "digest": "4a922ce4c368da5f1b2a53ee435a95cac9c5b83ffd217af9fb89f6f293789ad2",
+   "elapsed_seconds": 279.878141,
+   "error": null,
+   "evidence": {
+    "evaluation_id": "72e1bd22f866f226f32517112e2f47858c3b9c1ba802e11a73200560dbb0894e",
+    "record": "cases/pii-masking-ru/campaigns/mask/runs/S03-train-full.result.json"
+   },
+   "finished_at": "2026-11-20T11:20:01.146497+00:00",
+   "job": "http://host.docker.internal:8111",
+   "judge": {
+    "seconds": 49.681072,
+    "tokens_complete": true,
+    "total_tokens": 0
+   },
+   "measurement_id": "S03-train-full",
+   "proposal_count_at_finish": 3,
+   "score": 0.9980787429839285,
+   "solver": {
+    "seconds": 1015.1070435060028,
+    "tokens_complete": true,
+    "total_tokens": 0
+   },
+   "started_at": "2026-11-20T11:15:21.268356+00:00",
+   "state": "succeeded"
+  },
+  {
+   "candidate_id": "S03",
+   "comparison": {
+    "conditions_id": "pii-mask-v1+pii-mask-runner-1",
+    "dataset_id": "pii-ru-synth-v1-mask",
+    "split": "public",
+    "subset_id": "all"
+   },
+   "completion_order": 6,
+   "digest": "4a922ce4c368da5f1b2a53ee435a95cac9c5b83ffd217af9fb89f6f293789ad2",
+   "elapsed_seconds": 120.682372,
+   "error": null,
+   "evidence": null,
+   "finished_at": "2026-11-20T11:22:03.952355+00:00",
+   "job": "public-service",
+   "judge": null,
+   "measurement_id": "S03-public",
+   "proposal_count_at_finish": 3,
+   "score": 0.9991198084048062,
+   "solver": null,
+   "started_at": "2026-11-20T11:20:03.269983+00:00",
    "state": "succeeded"
   }
  ]

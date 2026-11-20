@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 300" role="img" aria-label="Шум метрики (бутстрэп по документам) от размера набора">
+<style>text{font:12px system-ui,sans-serif;fill:#4a5563}.g{stroke:#e3e7ec}.t{font-weight:600}</style>
+<text class="t" x="10" y="16">Шум метрики (бутстрэп по документам) от размера набора</text>
+<rect x="10" y="25" width="10" height="9" fill="#0f5c6e"/><text x="24" y="34">SE score одного кандидата</text>
+<rect x="270" y="25" width="10" height="9" fill="#3fa3b8"/><text x="284" y="34">SE разности двух кандидатов (парно)</text>
+<line class="g" x1="60" x2="660" y1="256.0" y2="256.0"/><text x="54" y="260.0" text-anchor="end">0.000</text>
+<line class="g" x1="60" x2="660" y1="203.0" y2="203.0"/><text x="54" y="207.0" text-anchor="end">0.006</text>
+<line class="g" x1="60" x2="660" y1="150.0" y2="150.0"/><text x="54" y="154.0" text-anchor="end">0.011</text>
+<line class="g" x1="60" x2="660" y1="97.0" y2="97.0"/><text x="54" y="101.0" text-anchor="end">0.017</text>
+<line class="g" x1="60" x2="660" y1="44.0" y2="44.0"/><text x="54" y="48.0" text-anchor="end">0.022</text>
+<text x="60.0" y="272" text-anchor="middle">200</text>
+<text x="231.4" y="272" text-anchor="middle">400</text>
+<text x="402.9" y="272" text-anchor="middle">600</text>
+<text x="660.0" y="272" text-anchor="middle">900</text>
+<text x="360.0" y="294" text-anchor="middle">примеров в наборе</text>
+<text x="14" y="40">стандартная ошибка</text>
+<polyline points="60.0,71.7 231.4,137.8 402.9,155.8 660.0,175.0" fill="none" stroke="#0f5c6e" stroke-width="2"/>
+<circle cx="60.0" cy="71.7" r="4" fill="#0f5c6e"><title>SE score одного кандидата: n=200, 0.0194</title></circle>
+<circle cx="231.4" cy="137.8" r="4" fill="#0f5c6e"><title>SE score одного кандидата: n=400, 0.0124</title></circle>
+<circle cx="402.9" cy="155.8" r="4" fill="#0f5c6e"><title>SE score одного кандидата: n=600, 0.0105</title></circle>
+<circle cx="660.0" cy="175.0" r="4" fill="#0f5c6e"><title>SE score одного кандидата: n=900, 0.0085</title></circle>
+<polyline points="60.0,169.6 231.4,198.1 402.9,211.9 660.0,218.4" fill="none" stroke="#3fa3b8" stroke-width="2"/>
+<circle cx="60.0" cy="169.6" r="4" fill="#3fa3b8"><title>SE разности двух кандидатов (парно): n=200, 0.0091</title></circle>
+<circle cx="231.4" cy="198.1" r="4" fill="#3fa3b8"><title>SE разности двух кандидатов (парно): n=400, 0.0061</title></circle>
+<circle cx="402.9" cy="211.9" r="4" fill="#3fa3b8"><title>SE разности двух кандидатов (парно): n=600, 0.0046</title></circle>
+<circle cx="660.0" cy="218.4" r="4" fill="#3fa3b8"><title>SE разности двух кандидатов (парно): n=900, 0.0040</title></circle>
+</svg>
