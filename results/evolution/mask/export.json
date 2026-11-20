@@ -9,9 +9,9 @@
   "proposed": 5,
   "remaining_proposals": 7,
   "running": [
-   "S05-train-full"
+   "S05-public"
   ],
-  "completed_measurements": 8
+  "completed_measurements": 9
  },
  "candidates": [
   {
@@ -381,10 +381,44 @@
     "split": "train",
     "subset_id": "0aa8d717d8d6cea5244b80e4dd6234fa946a1211b1f1c5a6a2259e17caeca841"
    },
+   "completion_order": 9,
    "digest": "6176dc44ff188a926b5bc9707485432f1915deae098ad19891588b364775c530",
+   "elapsed_seconds": 279.161614,
+   "error": null,
+   "evidence": {
+    "evaluation_id": "7250ea0fe50f936ed5100217afe31dab3a3ef5a139c05b4165686b84edacb139",
+    "record": "cases/pii-masking-ru/campaigns/mask/runs/S05-train-full.result.json"
+   },
+   "finished_at": "2026-11-20T11:38:09.881829+00:00",
    "job": "http://host.docker.internal:8111",
+   "judge": {
+    "seconds": 50.069079,
+    "tokens_complete": true,
+    "total_tokens": 0
+   },
    "measurement_id": "S05-train-full",
+   "proposal_count_at_finish": 5,
+   "score": 0.9998281244013622,
+   "solver": {
+    "seconds": 1044.1078793200868,
+    "tokens_complete": true,
+    "total_tokens": 0
+   },
    "started_at": "2026-11-20T11:33:30.720215+00:00",
+   "state": "succeeded"
+  },
+  {
+   "candidate_id": "S05",
+   "comparison": {
+    "conditions_id": "pii-mask-v1+pii-mask-runner-1",
+    "dataset_id": "pii-ru-synth-v1-mask",
+    "split": "public",
+    "subset_id": "all"
+   },
+   "digest": "6176dc44ff188a926b5bc9707485432f1915deae098ad19891588b364775c530",
+   "job": "public-service",
+   "measurement_id": "S05-public",
+   "started_at": "2026-11-20T11:39:16.853975+00:00",
    "state": "running"
   }
  ]

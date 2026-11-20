@@ -10,7 +10,9 @@
  "auc_applicable": true,
  "horizon": 12,
  "actual_proposals": 5,
- "running": [],
+ "running": [
+  "S05-public"
+ ],
  "points": [
   {
    "proposal": 1,
@@ -69,11 +71,11 @@
    "proposals": 5,
    "solution_id": "S05",
    "candidate_id": "S05",
-   "measurement_id": null,
+   "measurement_id": "S05-public",
    "completion_order": null,
    "finished_at": null,
    "score": null,
-   "state": "unmeasured",
+   "state": "running",
    "quality": null,
    "observed_quality": 0.9997149488944089
   }

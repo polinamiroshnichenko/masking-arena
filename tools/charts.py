@@ -140,7 +140,7 @@ def main() -> None:
     series = {f"{c} train": [ta[c]["recall_by_class"][k] for k in classes] for c in ta}
     saved = ROOT / "results/real_check/recall_real.json"
     real = {}
-    for cand in ("baseline", "S02", "S03", "S04"):
+    for cand in ("baseline", "S02", "S03", "S04", "S05"):
         f = ROOT / "operator/real_check/results" / cand / "report.json"
         if f.exists():
             real[cand] = json.loads(f.read_text())["recall_by_class"]
