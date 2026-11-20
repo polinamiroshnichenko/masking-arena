@@ -1,83 +1,105 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 834" role="img" aria-label="Recall по классам: синтетика (train) и реальные документы (29, вне поиска)">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 1054" role="img" aria-label="Recall по классам: синтетика (train) и реальные документы (29, вне поиска)">
 <style>text{font:12px system-ui,sans-serif;fill:#4a5563}.g{stroke:#e3e7ec}.t{font-weight:600}</style>
 <text class="t" x="10" y="16">Recall по классам: синтетика (train) и реальные документы (29, вне поиска)</text>
 <rect x="10" y="25" width="10" height="9" fill="#9aa5b1"/><text x="24" y="34">S01 train</text>
 <rect x="120" y="25" width="10" height="9" fill="#0f5c6e"/><text x="134" y="34">S02 train</text>
 <rect x="230" y="25" width="10" height="9" fill="#3fa3b8"/><text x="244" y="34">S03 train</text>
-<rect x="340" y="25" width="10" height="9" fill="#c8902a"/><text x="354" y="34">S01 реальные</text>
-<rect x="450" y="25" width="10" height="9" fill="#6b56b8"/><text x="464" y="34">S02 реальные</text>
-<rect x="560" y="25" width="10" height="9" fill="#c8402a"/><text x="574" y="34">S03 реальные</text>
-<line class="g" x1="170" x2="170" y1="44" y2="810"/><text x="170" y="826" text-anchor="middle">0.00</text>
-<line class="g" x1="390" x2="390" y1="44" y2="810"/><text x="390" y="826" text-anchor="middle">0.50</text>
-<line class="g" x1="610" x2="610" y1="44" y2="810"/><text x="610" y="826" text-anchor="middle">1.00</text>
-<text x="162" y="86.0" text-anchor="end">ФИО</text>
+<rect x="340" y="25" width="10" height="9" fill="#c8902a"/><text x="354" y="34">S04 train</text>
+<rect x="450" y="25" width="10" height="9" fill="#6b56b8"/><text x="464" y="34">S01 реальные</text>
+<rect x="560" y="25" width="10" height="9" fill="#c8402a"/><text x="574" y="34">S02 реальные</text>
+<rect x="670" y="25" width="10" height="9" fill="#9aa5b1"/><text x="684" y="34">S03 реальные</text>
+<rect x="780" y="25" width="10" height="9" fill="#0f5c6e"/><text x="794" y="34">S04 реальные</text>
+<line class="g" x1="170" x2="170" y1="44" y2="1030"/><text x="170" y="1046" text-anchor="middle">0.00</text>
+<line class="g" x1="390" x2="390" y1="44" y2="1030"/><text x="390" y="1046" text-anchor="middle">0.50</text>
+<line class="g" x1="610" x2="610" y1="44" y2="1030"/><text x="610" y="1046" text-anchor="middle">1.00</text>
+<text x="162" y="97.0" text-anchor="end">ФИО</text>
 <rect x="170" y="48" width="303.0" height="9" rx="2" fill="#9aa5b1"><title>S01 train, ФИО: 0.69</title></rect><text x="477.0" y="57">0.69</text>
 <rect x="170" y="59" width="303.0" height="9" rx="2" fill="#0f5c6e"><title>S02 train, ФИО: 0.69</title></rect><text x="477.0" y="68">0.69</text>
 <rect x="170" y="70" width="434.0" height="9" rx="2" fill="#3fa3b8"><title>S03 train, ФИО: 0.99</title></rect><text x="608.0" y="79">0.99</text>
-<rect x="170" y="81" width="418.1" height="9" rx="2" fill="#c8902a"><title>S01 реальные, ФИО: 0.95</title></rect><text x="592.1" y="90">0.95</text>
-<rect x="170" y="92" width="420.4" height="9" rx="2" fill="#6b56b8"><title>S02 реальные, ФИО: 0.96</title></rect><text x="594.4" y="101">0.96</text>
-<rect x="170" y="103" width="418.1" height="9" rx="2" fill="#c8402a"><title>S03 реальные, ФИО: 0.95</title></rect><text x="592.1" y="112">0.95</text>
-<text x="162" y="162.0" text-anchor="end">АДРЕС</text>
-<rect x="170" y="124" width="145.2" height="9" rx="2" fill="#9aa5b1"><title>S01 train, АДРЕС: 0.33</title></rect><text x="319.2" y="133">0.33</text>
-<rect x="170" y="135" width="437.6" height="9" rx="2" fill="#0f5c6e"><title>S02 train, АДРЕС: 0.99</title></rect><text x="611.6" y="144">0.99</text>
-<rect x="170" y="146" width="437.6" height="9" rx="2" fill="#3fa3b8"><title>S03 train, АДРЕС: 0.99</title></rect><text x="611.6" y="155">0.99</text>
-<rect x="170" y="157" width="15.7" height="9" rx="2" fill="#c8902a"><title>S01 реальные, АДРЕС: 0.04</title></rect><text x="189.7" y="166">0.04</text>
-<rect x="170" y="168" width="50.6" height="9" rx="2" fill="#6b56b8"><title>S02 реальные, АДРЕС: 0.12</title></rect><text x="224.6" y="177">0.12</text>
-<rect x="170" y="179" width="50.6" height="9" rx="2" fill="#c8402a"><title>S03 реальные, АДРЕС: 0.12</title></rect><text x="224.6" y="188">0.12</text>
-<text x="162" y="238.0" text-anchor="end">ТЕЛЕФОН</text>
-<rect x="170" y="200" width="435.8" height="9" rx="2" fill="#9aa5b1"><title>S01 train, ТЕЛЕФОН: 0.99</title></rect><text x="609.8" y="209">0.99</text>
-<rect x="170" y="211" width="440.0" height="9" rx="2" fill="#0f5c6e"><title>S02 train, ТЕЛЕФОН: 1.00</title></rect><text x="614.0" y="220">1.00</text>
-<rect x="170" y="222" width="440.0" height="9" rx="2" fill="#3fa3b8"><title>S03 train, ТЕЛЕФОН: 1.00</title></rect><text x="614.0" y="231">1.00</text>
-<rect x="170" y="233" width="440.0" height="9" rx="2" fill="#c8902a"><title>S01 реальные, ТЕЛЕФОН: 1.00</title></rect><text x="614.0" y="242">1.00</text>
-<rect x="170" y="244" width="440.0" height="9" rx="2" fill="#6b56b8"><title>S02 реальные, ТЕЛЕФОН: 1.00</title></rect><text x="614.0" y="253">1.00</text>
-<rect x="170" y="255" width="440.0" height="9" rx="2" fill="#c8402a"><title>S03 реальные, ТЕЛЕФОН: 1.00</title></rect><text x="614.0" y="264">1.00</text>
-<text x="162" y="314.0" text-anchor="end">EMAIL</text>
-<rect x="170" y="276" width="440.0" height="9" rx="2" fill="#9aa5b1"><title>S01 train, EMAIL: 1.00</title></rect><text x="614.0" y="285">1.00</text>
-<rect x="170" y="287" width="440.0" height="9" rx="2" fill="#0f5c6e"><title>S02 train, EMAIL: 1.00</title></rect><text x="614.0" y="296">1.00</text>
-<rect x="170" y="298" width="440.0" height="9" rx="2" fill="#3fa3b8"><title>S03 train, EMAIL: 1.00</title></rect><text x="614.0" y="307">1.00</text>
-<rect x="170" y="309" width="440.0" height="9" rx="2" fill="#c8902a"><title>S01 реальные, EMAIL: 1.00</title></rect><text x="614.0" y="318">1.00</text>
-<rect x="170" y="320" width="440.0" height="9" rx="2" fill="#6b56b8"><title>S02 реальные, EMAIL: 1.00</title></rect><text x="614.0" y="329">1.00</text>
-<rect x="170" y="331" width="440.0" height="9" rx="2" fill="#c8402a"><title>S03 реальные, EMAIL: 1.00</title></rect><text x="614.0" y="340">1.00</text>
-<text x="162" y="390.0" text-anchor="end">ПАСПОРТ</text>
-<rect x="170" y="352" width="334.8" height="9" rx="2" fill="#9aa5b1"><title>S01 train, ПАСПОРТ: 0.76</title></rect><text x="508.8" y="361">0.76</text>
-<rect x="170" y="363" width="440.0" height="9" rx="2" fill="#0f5c6e"><title>S02 train, ПАСПОРТ: 1.00</title></rect><text x="614.0" y="372">1.00</text>
-<rect x="170" y="374" width="440.0" height="9" rx="2" fill="#3fa3b8"><title>S03 train, ПАСПОРТ: 1.00</title></rect><text x="614.0" y="383">1.00</text>
-<rect x="170" y="385" width="440.0" height="9" rx="2" fill="#c8902a"><title>S01 реальные, ПАСПОРТ: 1.00</title></rect><text x="614.0" y="394">1.00</text>
-<rect x="170" y="396" width="440.0" height="9" rx="2" fill="#6b56b8"><title>S02 реальные, ПАСПОРТ: 1.00</title></rect><text x="614.0" y="405">1.00</text>
-<rect x="170" y="407" width="440.0" height="9" rx="2" fill="#c8402a"><title>S03 реальные, ПАСПОРТ: 1.00</title></rect><text x="614.0" y="416">1.00</text>
-<text x="162" y="466.0" text-anchor="end">СНИЛС</text>
-<rect x="170" y="428" width="311.6" height="9" rx="2" fill="#9aa5b1"><title>S01 train, СНИЛС: 0.71</title></rect><text x="485.6" y="437">0.71</text>
-<rect x="170" y="439" width="440.0" height="9" rx="2" fill="#0f5c6e"><title>S02 train, СНИЛС: 1.00</title></rect><text x="614.0" y="448">1.00</text>
-<rect x="170" y="450" width="440.0" height="9" rx="2" fill="#3fa3b8"><title>S03 train, СНИЛС: 1.00</title></rect><text x="614.0" y="459">1.00</text>
-<rect x="170" y="461" width="440.0" height="9" rx="2" fill="#c8902a"><title>S01 реальные, СНИЛС: 1.00</title></rect><text x="614.0" y="470">1.00</text>
-<rect x="170" y="472" width="440.0" height="9" rx="2" fill="#6b56b8"><title>S02 реальные, СНИЛС: 1.00</title></rect><text x="614.0" y="481">1.00</text>
-<rect x="170" y="483" width="440.0" height="9" rx="2" fill="#c8402a"><title>S03 реальные, СНИЛС: 1.00</title></rect><text x="614.0" y="492">1.00</text>
-<text x="162" y="542.0" text-anchor="end">ИНН</text>
-<rect x="170" y="504" width="391.6" height="9" rx="2" fill="#9aa5b1"><title>S01 train, ИНН: 0.89</title></rect><text x="565.6" y="513">0.89</text>
-<rect x="170" y="515" width="440.0" height="9" rx="2" fill="#0f5c6e"><title>S02 train, ИНН: 1.00</title></rect><text x="614.0" y="524">1.00</text>
-<rect x="170" y="526" width="440.0" height="9" rx="2" fill="#3fa3b8"><title>S03 train, ИНН: 1.00</title></rect><text x="614.0" y="535">1.00</text>
-<rect x="170" y="537" width="440.0" height="9" rx="2" fill="#c8902a"><title>S01 реальные, ИНН: 1.00</title></rect><text x="614.0" y="546">1.00</text>
-<rect x="170" y="548" width="440.0" height="9" rx="2" fill="#6b56b8"><title>S02 реальные, ИНН: 1.00</title></rect><text x="614.0" y="557">1.00</text>
-<rect x="170" y="559" width="440.0" height="9" rx="2" fill="#c8402a"><title>S03 реальные, ИНН: 1.00</title></rect><text x="614.0" y="568">1.00</text>
-<text x="162" y="618.0" text-anchor="end">КАРТА</text>
-<rect x="170" y="580" width="440.0" height="9" rx="2" fill="#9aa5b1"><title>S01 train, КАРТА: 1.00</title></rect><text x="614.0" y="589">1.00</text>
-<rect x="170" y="591" width="440.0" height="9" rx="2" fill="#0f5c6e"><title>S02 train, КАРТА: 1.00</title></rect><text x="614.0" y="600">1.00</text>
-<rect x="170" y="602" width="440.0" height="9" rx="2" fill="#3fa3b8"><title>S03 train, КАРТА: 1.00</title></rect><text x="614.0" y="611">1.00</text>
-<text x="174" y="622">нет данных</text>
-<text x="174" y="633">нет данных</text>
-<text x="174" y="644">нет данных</text>
-<text x="162" y="694.0" text-anchor="end">СЧЕТ</text>
-<rect x="170" y="656" width="330.5" height="9" rx="2" fill="#9aa5b1"><title>S01 train, СЧЕТ: 0.75</title></rect><text x="504.5" y="665">0.75</text>
-<rect x="170" y="667" width="440.0" height="9" rx="2" fill="#0f5c6e"><title>S02 train, СЧЕТ: 1.00</title></rect><text x="614.0" y="676">1.00</text>
-<rect x="170" y="678" width="440.0" height="9" rx="2" fill="#3fa3b8"><title>S03 train, СЧЕТ: 1.00</title></rect><text x="614.0" y="687">1.00</text>
-<rect x="170" y="689" width="440.0" height="9" rx="2" fill="#c8902a"><title>S01 реальные, СЧЕТ: 1.00</title></rect><text x="614.0" y="698">1.00</text>
-<rect x="170" y="700" width="440.0" height="9" rx="2" fill="#6b56b8"><title>S02 реальные, СЧЕТ: 1.00</title></rect><text x="614.0" y="709">1.00</text>
-<rect x="170" y="711" width="440.0" height="9" rx="2" fill="#c8402a"><title>S03 реальные, СЧЕТ: 1.00</title></rect><text x="614.0" y="720">1.00</text>
-<text x="162" y="770.0" text-anchor="end">ДАТА_РОЖДЕНИЯ</text>
-<rect x="170" y="732" width="156.2" height="9" rx="2" fill="#9aa5b1"><title>S01 train, ДАТА_РОЖДЕНИЯ: 0.35</title></rect><text x="330.2" y="741">0.35</text>
-<rect x="170" y="743" width="440.0" height="9" rx="2" fill="#0f5c6e"><title>S02 train, ДАТА_РОЖДЕНИЯ: 1.00</title></rect><text x="614.0" y="752">1.00</text>
-<rect x="170" y="754" width="440.0" height="9" rx="2" fill="#3fa3b8"><title>S03 train, ДАТА_РОЖДЕНИЯ: 1.00</title></rect><text x="614.0" y="763">1.00</text>
-<rect x="170" y="765" width="1.5" height="9" rx="2" fill="#c8902a"><title>S01 реальные, ДАТА_РОЖДЕНИЯ: 0.00</title></rect><text x="174.0" y="774">0.00</text>
-<rect x="170" y="776" width="440.0" height="9" rx="2" fill="#6b56b8"><title>S02 реальные, ДАТА_РОЖДЕНИЯ: 1.00</title></rect><text x="614.0" y="785">1.00</text>
-<rect x="170" y="787" width="440.0" height="9" rx="2" fill="#c8402a"><title>S03 реальные, ДАТА_РОЖДЕНИЯ: 1.00</title></rect><text x="614.0" y="796">1.00</text>
+<rect x="170" y="81" width="440.0" height="9" rx="2" fill="#c8902a"><title>S04 train, ФИО: 1.00</title></rect><text x="614.0" y="90">1.00</text>
+<rect x="170" y="92" width="418.1" height="9" rx="2" fill="#6b56b8"><title>S01 реальные, ФИО: 0.95</title></rect><text x="592.1" y="101">0.95</text>
+<rect x="170" y="103" width="420.4" height="9" rx="2" fill="#c8402a"><title>S02 реальные, ФИО: 0.96</title></rect><text x="594.4" y="112">0.96</text>
+<rect x="170" y="114" width="418.1" height="9" rx="2" fill="#9aa5b1"><title>S03 реальные, ФИО: 0.95</title></rect><text x="592.1" y="123">0.95</text>
+<rect x="170" y="125" width="440.0" height="9" rx="2" fill="#0f5c6e"><title>S04 реальные, ФИО: 1.00</title></rect><text x="614.0" y="134">1.00</text>
+<text x="162" y="195.0" text-anchor="end">АДРЕС</text>
+<rect x="170" y="146" width="145.2" height="9" rx="2" fill="#9aa5b1"><title>S01 train, АДРЕС: 0.33</title></rect><text x="319.2" y="155">0.33</text>
+<rect x="170" y="157" width="437.6" height="9" rx="2" fill="#0f5c6e"><title>S02 train, АДРЕС: 0.99</title></rect><text x="611.6" y="166">0.99</text>
+<rect x="170" y="168" width="437.6" height="9" rx="2" fill="#3fa3b8"><title>S03 train, АДРЕС: 0.99</title></rect><text x="611.6" y="177">0.99</text>
+<rect x="170" y="179" width="437.6" height="9" rx="2" fill="#c8902a"><title>S04 train, АДРЕС: 0.99</title></rect><text x="611.6" y="188">0.99</text>
+<rect x="170" y="190" width="15.7" height="9" rx="2" fill="#6b56b8"><title>S01 реальные, АДРЕС: 0.04</title></rect><text x="189.7" y="199">0.04</text>
+<rect x="170" y="201" width="50.6" height="9" rx="2" fill="#c8402a"><title>S02 реальные, АДРЕС: 0.12</title></rect><text x="224.6" y="210">0.12</text>
+<rect x="170" y="212" width="50.6" height="9" rx="2" fill="#9aa5b1"><title>S03 реальные, АДРЕС: 0.12</title></rect><text x="224.6" y="221">0.12</text>
+<rect x="170" y="223" width="66.8" height="9" rx="2" fill="#0f5c6e"><title>S04 реальные, АДРЕС: 0.15</title></rect><text x="240.8" y="232">0.15</text>
+<text x="162" y="293.0" text-anchor="end">ТЕЛЕФОН</text>
+<rect x="170" y="244" width="435.8" height="9" rx="2" fill="#9aa5b1"><title>S01 train, ТЕЛЕФОН: 0.99</title></rect><text x="609.8" y="253">0.99</text>
+<rect x="170" y="255" width="440.0" height="9" rx="2" fill="#0f5c6e"><title>S02 train, ТЕЛЕФОН: 1.00</title></rect><text x="614.0" y="264">1.00</text>
+<rect x="170" y="266" width="440.0" height="9" rx="2" fill="#3fa3b8"><title>S03 train, ТЕЛЕФОН: 1.00</title></rect><text x="614.0" y="275">1.00</text>
+<rect x="170" y="277" width="440.0" height="9" rx="2" fill="#c8902a"><title>S04 train, ТЕЛЕФОН: 1.00</title></rect><text x="614.0" y="286">1.00</text>
+<rect x="170" y="288" width="440.0" height="9" rx="2" fill="#6b56b8"><title>S01 реальные, ТЕЛЕФОН: 1.00</title></rect><text x="614.0" y="297">1.00</text>
+<rect x="170" y="299" width="440.0" height="9" rx="2" fill="#c8402a"><title>S02 реальные, ТЕЛЕФОН: 1.00</title></rect><text x="614.0" y="308">1.00</text>
+<rect x="170" y="310" width="440.0" height="9" rx="2" fill="#9aa5b1"><title>S03 реальные, ТЕЛЕФОН: 1.00</title></rect><text x="614.0" y="319">1.00</text>
+<rect x="170" y="321" width="440.0" height="9" rx="2" fill="#0f5c6e"><title>S04 реальные, ТЕЛЕФОН: 1.00</title></rect><text x="614.0" y="330">1.00</text>
+<text x="162" y="391.0" text-anchor="end">EMAIL</text>
+<rect x="170" y="342" width="440.0" height="9" rx="2" fill="#9aa5b1"><title>S01 train, EMAIL: 1.00</title></rect><text x="614.0" y="351">1.00</text>
+<rect x="170" y="353" width="440.0" height="9" rx="2" fill="#0f5c6e"><title>S02 train, EMAIL: 1.00</title></rect><text x="614.0" y="362">1.00</text>
+<rect x="170" y="364" width="440.0" height="9" rx="2" fill="#3fa3b8"><title>S03 train, EMAIL: 1.00</title></rect><text x="614.0" y="373">1.00</text>
+<rect x="170" y="375" width="440.0" height="9" rx="2" fill="#c8902a"><title>S04 train, EMAIL: 1.00</title></rect><text x="614.0" y="384">1.00</text>
+<rect x="170" y="386" width="440.0" height="9" rx="2" fill="#6b56b8"><title>S01 реальные, EMAIL: 1.00</title></rect><text x="614.0" y="395">1.00</text>
+<rect x="170" y="397" width="440.0" height="9" rx="2" fill="#c8402a"><title>S02 реальные, EMAIL: 1.00</title></rect><text x="614.0" y="406">1.00</text>
+<rect x="170" y="408" width="440.0" height="9" rx="2" fill="#9aa5b1"><title>S03 реальные, EMAIL: 1.00</title></rect><text x="614.0" y="417">1.00</text>
+<rect x="170" y="419" width="440.0" height="9" rx="2" fill="#0f5c6e"><title>S04 реальные, EMAIL: 1.00</title></rect><text x="614.0" y="428">1.00</text>
+<text x="162" y="489.0" text-anchor="end">ПАСПОРТ</text>
+<rect x="170" y="440" width="334.8" height="9" rx="2" fill="#9aa5b1"><title>S01 train, ПАСПОРТ: 0.76</title></rect><text x="508.8" y="449">0.76</text>
+<rect x="170" y="451" width="440.0" height="9" rx="2" fill="#0f5c6e"><title>S02 train, ПАСПОРТ: 1.00</title></rect><text x="614.0" y="460">1.00</text>
+<rect x="170" y="462" width="440.0" height="9" rx="2" fill="#3fa3b8"><title>S03 train, ПАСПОРТ: 1.00</title></rect><text x="614.0" y="471">1.00</text>
+<rect x="170" y="473" width="440.0" height="9" rx="2" fill="#c8902a"><title>S04 train, ПАСПОРТ: 1.00</title></rect><text x="614.0" y="482">1.00</text>
+<rect x="170" y="484" width="440.0" height="9" rx="2" fill="#6b56b8"><title>S01 реальные, ПАСПОРТ: 1.00</title></rect><text x="614.0" y="493">1.00</text>
+<rect x="170" y="495" width="440.0" height="9" rx="2" fill="#c8402a"><title>S02 реальные, ПАСПОРТ: 1.00</title></rect><text x="614.0" y="504">1.00</text>
+<rect x="170" y="506" width="440.0" height="9" rx="2" fill="#9aa5b1"><title>S03 реальные, ПАСПОРТ: 1.00</title></rect><text x="614.0" y="515">1.00</text>
+<rect x="170" y="517" width="440.0" height="9" rx="2" fill="#0f5c6e"><title>S04 реальные, ПАСПОРТ: 1.00</title></rect><text x="614.0" y="526">1.00</text>
+<text x="162" y="587.0" text-anchor="end">СНИЛС</text>
+<rect x="170" y="538" width="311.6" height="9" rx="2" fill="#9aa5b1"><title>S01 train, СНИЛС: 0.71</title></rect><text x="485.6" y="547">0.71</text>
+<rect x="170" y="549" width="440.0" height="9" rx="2" fill="#0f5c6e"><title>S02 train, СНИЛС: 1.00</title></rect><text x="614.0" y="558">1.00</text>
+<rect x="170" y="560" width="440.0" height="9" rx="2" fill="#3fa3b8"><title>S03 train, СНИЛС: 1.00</title></rect><text x="614.0" y="569">1.00</text>
+<rect x="170" y="571" width="440.0" height="9" rx="2" fill="#c8902a"><title>S04 train, СНИЛС: 1.00</title></rect><text x="614.0" y="580">1.00</text>
+<rect x="170" y="582" width="440.0" height="9" rx="2" fill="#6b56b8"><title>S01 реальные, СНИЛС: 1.00</title></rect><text x="614.0" y="591">1.00</text>
+<rect x="170" y="593" width="440.0" height="9" rx="2" fill="#c8402a"><title>S02 реальные, СНИЛС: 1.00</title></rect><text x="614.0" y="602">1.00</text>
+<rect x="170" y="604" width="440.0" height="9" rx="2" fill="#9aa5b1"><title>S03 реальные, СНИЛС: 1.00</title></rect><text x="614.0" y="613">1.00</text>
+<rect x="170" y="615" width="440.0" height="9" rx="2" fill="#0f5c6e"><title>S04 реальные, СНИЛС: 1.00</title></rect><text x="614.0" y="624">1.00</text>
+<text x="162" y="685.0" text-anchor="end">ИНН</text>
+<rect x="170" y="636" width="391.6" height="9" rx="2" fill="#9aa5b1"><title>S01 train, ИНН: 0.89</title></rect><text x="565.6" y="645">0.89</text>
+<rect x="170" y="647" width="440.0" height="9" rx="2" fill="#0f5c6e"><title>S02 train, ИНН: 1.00</title></rect><text x="614.0" y="656">1.00</text>
+<rect x="170" y="658" width="440.0" height="9" rx="2" fill="#3fa3b8"><title>S03 train, ИНН: 1.00</title></rect><text x="614.0" y="667">1.00</text>
+<rect x="170" y="669" width="440.0" height="9" rx="2" fill="#c8902a"><title>S04 train, ИНН: 1.00</title></rect><text x="614.0" y="678">1.00</text>
+<rect x="170" y="680" width="440.0" height="9" rx="2" fill="#6b56b8"><title>S01 реальные, ИНН: 1.00</title></rect><text x="614.0" y="689">1.00</text>
+<rect x="170" y="691" width="440.0" height="9" rx="2" fill="#c8402a"><title>S02 реальные, ИНН: 1.00</title></rect><text x="614.0" y="700">1.00</text>
+<rect x="170" y="702" width="440.0" height="9" rx="2" fill="#9aa5b1"><title>S03 реальные, ИНН: 1.00</title></rect><text x="614.0" y="711">1.00</text>
+<rect x="170" y="713" width="440.0" height="9" rx="2" fill="#0f5c6e"><title>S04 реальные, ИНН: 1.00</title></rect><text x="614.0" y="722">1.00</text>
+<text x="162" y="783.0" text-anchor="end">КАРТА</text>
+<rect x="170" y="734" width="440.0" height="9" rx="2" fill="#9aa5b1"><title>S01 train, КАРТА: 1.00</title></rect><text x="614.0" y="743">1.00</text>
+<rect x="170" y="745" width="440.0" height="9" rx="2" fill="#0f5c6e"><title>S02 train, КАРТА: 1.00</title></rect><text x="614.0" y="754">1.00</text>
+<rect x="170" y="756" width="440.0" height="9" rx="2" fill="#3fa3b8"><title>S03 train, КАРТА: 1.00</title></rect><text x="614.0" y="765">1.00</text>
+<rect x="170" y="767" width="440.0" height="9" rx="2" fill="#c8902a"><title>S04 train, КАРТА: 1.00</title></rect><text x="614.0" y="776">1.00</text>
+<text x="174" y="787">нет данных</text>
+<text x="174" y="798">нет данных</text>
+<text x="174" y="809">нет данных</text>
+<text x="174" y="820">нет данных</text>
+<text x="162" y="881.0" text-anchor="end">СЧЕТ</text>
+<rect x="170" y="832" width="330.5" height="9" rx="2" fill="#9aa5b1"><title>S01 train, СЧЕТ: 0.75</title></rect><text x="504.5" y="841">0.75</text>
+<rect x="170" y="843" width="440.0" height="9" rx="2" fill="#0f5c6e"><title>S02 train, СЧЕТ: 1.00</title></rect><text x="614.0" y="852">1.00</text>
+<rect x="170" y="854" width="440.0" height="9" rx="2" fill="#3fa3b8"><title>S03 train, СЧЕТ: 1.00</title></rect><text x="614.0" y="863">1.00</text>
+<rect x="170" y="865" width="440.0" height="9" rx="2" fill="#c8902a"><title>S04 train, СЧЕТ: 1.00</title></rect><text x="614.0" y="874">1.00</text>
+<rect x="170" y="876" width="440.0" height="9" rx="2" fill="#6b56b8"><title>S01 реальные, СЧЕТ: 1.00</title></rect><text x="614.0" y="885">1.00</text>
+<rect x="170" y="887" width="440.0" height="9" rx="2" fill="#c8402a"><title>S02 реальные, СЧЕТ: 1.00</title></rect><text x="614.0" y="896">1.00</text>
+<rect x="170" y="898" width="440.0" height="9" rx="2" fill="#9aa5b1"><title>S03 реальные, СЧЕТ: 1.00</title></rect><text x="614.0" y="907">1.00</text>
+<rect x="170" y="909" width="440.0" height="9" rx="2" fill="#0f5c6e"><title>S04 реальные, СЧЕТ: 1.00</title></rect><text x="614.0" y="918">1.00</text>
+<text x="162" y="979.0" text-anchor="end">ДАТА_РОЖДЕНИЯ</text>
+<rect x="170" y="930" width="156.2" height="9" rx="2" fill="#9aa5b1"><title>S01 train, ДАТА_РОЖДЕНИЯ: 0.35</title></rect><text x="330.2" y="939">0.35</text>
+<rect x="170" y="941" width="440.0" height="9" rx="2" fill="#0f5c6e"><title>S02 train, ДАТА_РОЖДЕНИЯ: 1.00</title></rect><text x="614.0" y="950">1.00</text>
+<rect x="170" y="952" width="440.0" height="9" rx="2" fill="#3fa3b8"><title>S03 train, ДАТА_РОЖДЕНИЯ: 1.00</title></rect><text x="614.0" y="961">1.00</text>
+<rect x="170" y="963" width="440.0" height="9" rx="2" fill="#c8902a"><title>S04 train, ДАТА_РОЖДЕНИЯ: 1.00</title></rect><text x="614.0" y="972">1.00</text>
+<rect x="170" y="974" width="1.5" height="9" rx="2" fill="#6b56b8"><title>S01 реальные, ДАТА_РОЖДЕНИЯ: 0.00</title></rect><text x="174.0" y="983">0.00</text>
+<rect x="170" y="985" width="440.0" height="9" rx="2" fill="#c8402a"><title>S02 реальные, ДАТА_РОЖДЕНИЯ: 1.00</title></rect><text x="614.0" y="994">1.00</text>
+<rect x="170" y="996" width="440.0" height="9" rx="2" fill="#9aa5b1"><title>S03 реальные, ДАТА_РОЖДЕНИЯ: 1.00</title></rect><text x="614.0" y="1005">1.00</text>
+<rect x="170" y="1007" width="440.0" height="9" rx="2" fill="#0f5c6e"><title>S04 реальные, ДАТА_РОЖДЕНИЯ: 1.00</title></rect><text x="614.0" y="1016">1.00</text>
 </svg>

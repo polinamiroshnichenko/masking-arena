@@ -9,7 +9,7 @@
  "integration": "right_step",
  "auc_applicable": true,
  "horizon": 12,
- "actual_proposals": 3,
+ "actual_proposals": 5,
  "running": [],
  "points": [
   {
@@ -50,20 +50,48 @@
    "state": "succeeded",
    "quality": 0.9991198084048062,
    "observed_quality": 0.9991198084048062
+  },
+  {
+   "proposal": 4,
+   "proposals": 4,
+   "solution_id": "S04",
+   "candidate_id": "S04",
+   "measurement_id": "S04-public",
+   "completion_order": 8,
+   "finished_at": "2026-11-20T11:33:12.035376+00:00",
+   "score": 0.9997149488944089,
+   "state": "succeeded",
+   "quality": 0.9997149488944089,
+   "observed_quality": 0.9997149488944089
+  },
+  {
+   "proposal": 5,
+   "proposals": 5,
+   "solution_id": "S05",
+   "candidate_id": "S05",
+   "measurement_id": null,
+   "completion_order": null,
+   "finished_at": null,
+   "score": null,
+   "state": "unmeasured",
+   "quality": null,
+   "observed_quality": 0.9997149488944089
   }
  ],
- "final_quality": 0.9991198084048062,
+ "final_quality": 0.9997149488944089,
  "complete": false,
- "missing_proposals": [],
+ "missing_proposals": [
+  5
+ ],
  "failed_proposals": [],
  "unproposed_range": [
-  4,
+  6,
   12
  ],
- "missing_count": 9,
+ "missing_count": 8,
  "auc": null,
  "mean_quality": null,
- "observed_auc": 2.502600921447116,
+ "observed_auc": 3.502315870341525,
  "observed_from": 1,
- "covered_proposals": 3
+ "covered_proposals": 4
 }

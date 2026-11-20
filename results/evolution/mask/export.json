@@ -6,10 +6,12 @@
   "stop_reason": null,
   "finalization": null,
   "stopped": false,
-  "proposed": 3,
-  "remaining_proposals": 9,
-  "running": [],
-  "completed_measurements": 6
+  "proposed": 5,
+  "remaining_proposals": 7,
+  "running": [
+   "S05-train-full"
+  ],
+  "completed_measurements": 8
  },
  "candidates": [
   {
@@ -87,6 +89,58 @@
    "resources_source": "unknown",
    "snapshot_error": null,
    "solution_id": "S03"
+  },
+  {
+   "bundle_error": null,
+   "candidate_id": "S04",
+   "change": "Добавлен теггер ФИО (tagfeat.py, names_ru.py, weights.json, обучены на train; порог 0.07) поверх структурных правил S02 (rules_a1.py = S02); остальные классы и unmask без изменений. Группа-CV по семействам и по основам фамилий: ФИО recall .95-.98 при P .97-.99 на тестах без общих семейств.",
+   "created_at": "2026-11-20T11:30:17.136508+00:00",
+   "digest": "dfcee5034bc287b3dc2b0300156425037c4db23be6b5d2d902d4005e955f9f43",
+   "digest_version": 2,
+   "hypothesis": "Остаток ошибок S02 — ФИО (recall .689). Обучаемый токен-теггер без идентичности слов (форма/регистр, суффиксы 1-4, словарь имён общего знания, окно, разделители) обобщается на новые фамилии и шаблоны без словаря фамилий: ожидается ФИО recall >= .95 и score >= .99 на train/public. Опровергается: public заметно ниже train, либо precision < .9 из-за ложных ФИО.",
+   "parents": [
+    "S02"
+   ],
+   "proposal": 4,
+   "research_resources": {
+    "attribution": "unknown",
+    "total_tokens": null,
+    "model_seconds": null
+   },
+   "resources": {
+    "seconds": 0,
+    "tokens_complete": false,
+    "total_tokens": 0
+   },
+   "resources_source": "unknown",
+   "snapshot_error": null,
+   "solution_id": "S04"
+  },
+  {
+   "bundle_error": null,
+   "candidate_id": "S05",
+   "change": "Новый каталог ways/robust-x1 (копия names-n1 + правки): горизонтальные пробелы в ФИО-шаблонах и инициалах; обрезка ведущих обращений/титулов; 'по имени', города после г./город/пос.; ALLCAPS ФИО; нижний регистр: отчество и неоднозначные имена после глаголов общения и в строке 'HH:MM имя:'; NER-слово в начале предложения, похожее на глагол, не присоединяется; расширенный словарь имён (общие знания) и исправление ложной неоднозначности 'яна'; даты рождения: ключ 'рожд' только как 'рождени/рожден', ключ на предыдущей строке, 'выдано'; адреса: тип после названия, Санкт-Петербург-подобные города, д. Ольховка, мкр. 7-й, площадь участка; телефоны (495) 123-45-67, 8 (3822) 55-12-34, точки.",
+   "created_at": "2026-11-20T11:33:27.211151+00:00",
+   "digest": "6176dc44ff188a926b5bc9707485432f1915deae098ad19891588b364775c530",
+   "digest_version": 2,
+   "hypothesis": "Остаточные ошибки S03 на train (FN ФИО 63, FN АДРЕС 8, FP ФИО ~97 слов) и режимы отказа на сдвинутых вымышленных строках вызваны не нехваткой словаря, а несколькими общими механизмами: (1) обращения/титулы попадают в ФИО (шаблон из 3 заглавных слов, «господин» как фамилия на -ин), (2) шаблоны с \\s склеивают ФИО через перенос строки, (3) слово «имени» блокирует «по имени X», города после «г.» принимаются за имя, (4) заглавные слова целиком, нижний регистр и неоднозначные имена в чате не распознаются, (5) адреса: составные города с заглавной после дефиса, тип улицы после названия, «д.»-деревня, (6) ключ «рожд» совпадает с фамилией Рождественская. Исправление этих механизмов (без значений из train) не снижает train-балл и поднимает recall/precision на независимо составленных сдвинутых проверках. Опровержение: train-балл ниже S03 (0.9981) более чем на шум 0.001 либо новые FP ФИО/АДРЕС на train; нулевой эффект на сдвинутых проверках.",
+   "parents": [
+    "S03"
+   ],
+   "proposal": 5,
+   "research_resources": {
+    "attribution": "unknown",
+    "total_tokens": null,
+    "model_seconds": null
+   },
+   "resources": {
+    "seconds": 0,
+    "tokens_complete": false,
+    "total_tokens": 0
+   },
+   "resources_source": "unknown",
+   "snapshot_error": null,
+   "solution_id": "S05"
   }
  ],
  "research_usage": null,
@@ -261,6 +315,77 @@
    "solver": null,
    "started_at": "2026-11-20T11:20:03.269983+00:00",
    "state": "succeeded"
+  },
+  {
+   "candidate_id": "S04",
+   "comparison": {
+    "conditions_id": "pii-mask-v1+pii-mask-runner-1",
+    "dataset_id": "pii-ru-synth-v1-mask",
+    "split": "train",
+    "subset_id": "0aa8d717d8d6cea5244b80e4dd6234fa946a1211b1f1c5a6a2259e17caeca841"
+   },
+   "completion_order": 7,
+   "digest": "dfcee5034bc287b3dc2b0300156425037c4db23be6b5d2d902d4005e955f9f43",
+   "elapsed_seconds": 109.377716,
+   "error": null,
+   "evidence": {
+    "evaluation_id": "f6d12f310528c8d193319ea7650bc68668fa94b47924b55acd871f5ad2258bea",
+    "record": "cases/pii-masking-ru/campaigns/mask/runs/S04-train-full.result.json"
+   },
+   "finished_at": "2026-11-20T11:32:08.879048+00:00",
+   "job": "http://host.docker.internal:8111",
+   "judge": {
+    "seconds": 47.219299,
+    "tokens_complete": true,
+    "total_tokens": 0
+   },
+   "measurement_id": "S04-train-full",
+   "proposal_count_at_finish": 4,
+   "score": 0.9994469374596939,
+   "solver": {
+    "seconds": 304.14207802417513,
+    "tokens_complete": true,
+    "total_tokens": 0
+   },
+   "started_at": "2026-11-20T11:30:19.501332+00:00",
+   "state": "succeeded"
+  },
+  {
+   "candidate_id": "S04",
+   "comparison": {
+    "conditions_id": "pii-mask-v1+pii-mask-runner-1",
+    "dataset_id": "pii-ru-synth-v1-mask",
+    "split": "public",
+    "subset_id": "all"
+   },
+   "completion_order": 8,
+   "digest": "dfcee5034bc287b3dc2b0300156425037c4db23be6b5d2d902d4005e955f9f43",
+   "elapsed_seconds": 60.742652,
+   "error": null,
+   "evidence": null,
+   "finished_at": "2026-11-20T11:33:12.035376+00:00",
+   "job": "public-service",
+   "judge": null,
+   "measurement_id": "S04-public",
+   "proposal_count_at_finish": 4,
+   "score": 0.9997149488944089,
+   "solver": null,
+   "started_at": "2026-11-20T11:32:11.292724+00:00",
+   "state": "succeeded"
+  },
+  {
+   "candidate_id": "S05",
+   "comparison": {
+    "conditions_id": "pii-mask-v1+pii-mask-runner-1",
+    "dataset_id": "pii-ru-synth-v1-mask",
+    "split": "train",
+    "subset_id": "0aa8d717d8d6cea5244b80e4dd6234fa946a1211b1f1c5a6a2259e17caeca841"
+   },
+   "digest": "6176dc44ff188a926b5bc9707485432f1915deae098ad19891588b364775c530",
+   "job": "http://host.docker.internal:8111",
+   "measurement_id": "S05-train-full",
+   "started_at": "2026-11-20T11:33:30.720215+00:00",
+   "state": "running"
   }
  ]
 }
