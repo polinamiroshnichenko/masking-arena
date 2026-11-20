@@ -1,0 +1,48 @@
+{
+  "mask": {
+    "task": "mask",
+    "release_id": "pii-mask-c1",
+    "max_solutions": 12,
+    "finalists": 3,
+    "output_count": 1,
+    "runner_image": "pii-mask-runner:1",
+    "ports": {
+      "train": 8111,
+      "public": 8112,
+      "private": 8113
+    },
+    "dataset_id": "pii-ru-synth-v1-mask",
+    "conditions_id": "pii-mask-v1+pii-mask-runner-1"
+  },
+  "unmask": {
+    "task": "unmask",
+    "release_id": "pii-unmask-c1",
+    "max_solutions": 6,
+    "finalists": 2,
+    "output_count": 1,
+    "runner_image": "pii-unmask-runner:1",
+    "ports": {
+      "train": 8121,
+      "public": 8122,
+      "private": 8123
+    },
+    "dataset_id": "pii-ru-synth-v1-unmask",
+    "conditions_id": "pii-mask-v1+pii-unmask-runner-1"
+  },
+  "acceptance": {
+    "task": "mask",
+    "acceptance": true,
+    "release_id": "pii-acceptance",
+    "max_solutions": 3,
+    "finalists": 2,
+    "output_count": 1,
+    "runner_image": "pii-mask-runner:1",
+    "ports": {
+      "train": 8191,
+      "public": 8192,
+      "private": 8193
+    },
+    "dataset_id": "acceptance-train-subset",
+    "conditions_id": "pii-mask-v1+pii-mask-runner-1"
+  }
+}

@@ -6,6 +6,7 @@
 Стратегии генерируют ответы прямо из эталона (oracle) или по простому правилу, поэтому это проверка
 метрики, а не решения. Результат — таблица для ADR-0003.
 """
+
 from __future__ import annotations
 
 import argparse
@@ -84,8 +85,14 @@ def strategy(pair: str, inp: dict, ref: dict) -> str:
     if name == "mask_all_tokens":
         return mask_spans(text, [(m.start(), m.end(), "ФИО") for m in TOKEN_RE.finditer(text)])
     if name == "mask_all_digits_and_capitals":
-        return mask_spans(text, [(m.start(), m.end(), "ФИО") for m in TOKEN_RE.finditer(text)
-                                 if m.group().isdigit() or m.group()[0].isupper()])
+        return mask_spans(
+            text,
+            [
+                (m.start(), m.end(), "ФИО")
+                for m in TOKEN_RE.finditer(text)
+                if m.group().isdigit() or m.group()[0].isupper()
+            ],
+        )
     if name == "oracle_plus_all_digits":
         extra = [(m.start(), m.end(), "ИНН") for m in re.finditer(r"\d+", text)]
         covered = {i for a, b, _ in gold for i in range(a, b)}
@@ -118,14 +125,20 @@ def main() -> None:
     a = ap.parse_args()
     examples = load_jsonl(a.data)
     policy = load_policy()
-    names = ["identity + identity", "mask_all_tokens + oracle", "mask_all_digits_and_capitals + oracle",
-             "oracle_plus_all_digits + oracle", "oracle_fio_surname_only + oracle"] + [
-             f"oracle_drop_{c} + oracle" for c in ("ФИО", "АДРЕС", "КАРТА")] + [
-             "oracle + plain_replace", "oracle + oracle"]
+    names = (
+        [
+            "identity + identity",
+            "mask_all_tokens + oracle",
+            "mask_all_digits_and_capitals + oracle",
+            "oracle_plus_all_digits + oracle",
+            "oracle_fio_surname_only + oracle",
+        ]
+        + [f"oracle_drop_{c} + oracle" for c in ("ФИО", "АДРЕС", "КАРТА")]
+        + ["oracle + plain_replace", "oracle + oracle"]
+    )
     answers_by_name = {}
     for name in names:
-        answers_by_name[name] = [strategy(name, json.loads(e["input"]), json.loads(e["reference"]))
-                                 for e in examples]
+        answers_by_name[name] = [strategy(name, json.loads(e["input"]), json.loads(e["reference"])) for e in examples]
     if a.baseline:
         base = {r["id"]: r["answer"] for r in load_jsonl(a.baseline)}
         answers_by_name["baseline (regex + plain_replace)"] = [base[e["id"]] for e in examples]
@@ -137,21 +150,36 @@ def main() -> None:
             if st["task"] == "mask":
                 ref = json.loads(e["reference"])
                 text = json.loads(e["input"])["text"]
-                st["_gold_tokens"] = sum(1 for m in TOKEN_RE.finditer(text)
-                                         if any(s["start"] <= m.start() and m.end() <= s["end"]
-                                                for s in ref["spans"]))
+                st["_gold_tokens"] = sum(
+                    1
+                    for m in TOKEN_RE.finditer(text)
+                    if any(s["start"] <= m.start() and m.end() <= s["end"] for s in ref["spans"])
+                )
             per_ex.append(st)
         agg = aggregate(per_ex, policy)
         s = agg["statistics"]
-        rows.append({"strategy": name, "score": agg["score"], "R_hmean": s["recall_class_hmean"],
-                     "R_macro": s["recall_macro"], "P": s["precision"], "phi": s["precision_penalty"],
-                     "A": s["restore_accuracy"], "S_mask": s["recall_class_hmean"] * s["precision_penalty"],
-                     "S_mask_arith": s["recall_macro"] * s["precision_penalty"],
-                     **alt_metrics(per_ex, examples)})
+        rows.append(
+            {
+                "strategy": name,
+                "score": agg["score"],
+                "R_hmean": s["recall_class_hmean"],
+                "R_macro": s["recall_macro"],
+                "P": s["precision"],
+                "phi": s["precision_penalty"],
+                "A": s["restore_accuracy"],
+                "S_mask": s["recall_class_hmean"] * s["precision_penalty"],
+                "S_mask_arith": s["recall_macro"] * s["precision_penalty"],
+                **alt_metrics(per_ex, examples),
+            }
+        )
     cols = ["strategy", "score", "S_mask", "R_hmean", "R_macro", "S_mask_arith", "P", "phi", "A", "F1", "F2"]
     lines = ["| " + " | ".join(cols) + " |", "|" + "---|" * len(cols)]
     for r in rows:
-        lines.append("| " + " | ".join(r[c] if isinstance(r[c], str) else f"{r[c]:.3f}" for c in cols) + " |")
+        lines.append(
+            "| "
+            + " | ".join(r[c] if isinstance(r[c], str) else ("—" if r[c] is None else f"{r[c]:.3f}") for c in cols)
+            + " |"
+        )
     table = "\n".join(lines)
     print(table)
     if a.out:

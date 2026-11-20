@@ -1,0 +1,69 @@
+{
+ "comparison": {
+  "split": "public",
+  "dataset_id": "acceptance-public",
+  "subset_id": "all",
+  "conditions_id": "pii-mask-v1+pii-mask-runner-1"
+ },
+ "direction": "maximize",
+ "integration": "right_step",
+ "auc_applicable": true,
+ "horizon": 3,
+ "actual_proposals": 3,
+ "running": [],
+ "points": [
+  {
+   "proposal": 1,
+   "proposals": 1,
+   "solution_id": "S01",
+   "candidate_id": "S01",
+   "measurement_id": "S01-public",
+   "completion_order": 3,
+   "finished_at": "2026-11-20T09:48:34.163243+00:00",
+   "score": 0.0,
+   "state": "succeeded",
+   "quality": 0.0,
+   "observed_quality": 0.0
+  },
+  {
+   "proposal": 2,
+   "proposals": 2,
+   "solution_id": "S02",
+   "candidate_id": "S02",
+   "measurement_id": null,
+   "completion_order": null,
+   "finished_at": null,
+   "score": null,
+   "state": "unmeasured",
+   "quality": null,
+   "observed_quality": 0.0
+  },
+  {
+   "proposal": 3,
+   "proposals": 3,
+   "solution_id": "S03",
+   "candidate_id": "S03",
+   "measurement_id": null,
+   "completion_order": null,
+   "finished_at": null,
+   "score": null,
+   "state": "unmeasured",
+   "quality": null,
+   "observed_quality": 0.0
+  }
+ ],
+ "final_quality": 0.0,
+ "complete": false,
+ "missing_proposals": [
+  2,
+  3
+ ],
+ "failed_proposals": [],
+ "unproposed_range": null,
+ "missing_count": 2,
+ "auc": null,
+ "mean_quality": null,
+ "observed_auc": 0.0,
+ "observed_from": 1,
+ "covered_proposals": 1
+}

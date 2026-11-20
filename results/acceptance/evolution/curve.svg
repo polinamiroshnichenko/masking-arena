@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 300" role="img" aria-label="Кампания acceptance: лучший public-score от номера решения">
+<style>text{font:12px system-ui,sans-serif;fill:#4a5563}.g{stroke:#e3e7ec}.s{fill:none;stroke:#0f5c6e;stroke-width:2}.p{fill:#0f5c6e}.f{fill:#c8402a}</style>
+<text x="52" y="16" font-weight="600">Кампания acceptance: лучший public-score от номера решения</text>
+<line class="g" x1="52" x2="624" y1="260.0" y2="260.0"/><text x="46" y="264.0" text-anchor="end">0.00</text>
+<line class="g" x1="52" x2="624" y1="202.0" y2="202.0"/><text x="46" y="206.0" text-anchor="end">0.00</text>
+<line class="g" x1="52" x2="624" y1="144.0" y2="144.0"/><text x="46" y="148.0" text-anchor="end">0.00</text>
+<line class="g" x1="52" x2="624" y1="86.0" y2="86.0"/><text x="46" y="90.0" text-anchor="end">0.00</text>
+<line class="g" x1="52" x2="624" y1="28.0" y2="28.0"/><text x="46" y="32.0" text-anchor="end">0.00</text>
+<text x="147.3" y="276" text-anchor="middle">S01</text>
+<text x="338.0" y="276" text-anchor="middle">S02</text>
+<text x="528.7" y="276" text-anchor="middle">S03</text>
+<text x="338.0" y="294" text-anchor="middle">номер предложенного решения</text>
+<path class="s" d="M52.0,260.0L242.7,260.0L242.7,260.0L433.3,260.0L433.3,260.0L624.0,260.0"/>
+<circle class="p" cx="147.3" cy="260.0" r="4"><title>S01: 0.0000</title></circle>
+</svg>

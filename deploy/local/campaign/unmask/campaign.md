@@ -1,0 +1,29 @@
+# Кампания `unmask` — восстановление ПДн в ответе модели (кейс pii-masking-ru)
+
+Каталог кампании: `cases/pii-masking-ru/campaigns/unmask`. Условия заморожены оператором до поиска (ADR-0006, ADR-0007 репозитория проекта).
+
+## Задача
+Только примеры `task = unmask` (описание кейса — `cases/pii-masking-ru/README.md`). Ответ — JSON `{"text"}`: метки (в т.ч. искажённые) заменены значениями в правильной грамматической форме, текст вне меток не меняется.
+
+## Фиксированные условия
+- Метрика: замороженный пакет `metric/` (`pii-mask-v1`), направление `maximize`. На наборе только из unmask итог = доля верно восстановленных меток A.
+- Данные `{{DATASET_ID}}`: train {{N_TRAIN}} (`cases/pii-masking-ru/dataset/train/dataset.jsonl`, открыт), public {{N_PUBLIC}} (только общий score), private {{N_PRIVATE}} (только статус).
+- Решатель: `solve.py` в немодельном runner, образ `pii-unmask-runner:1` (Python 3.12 + pymorphy3 2.0.4 со словарём ru, razdel 0.5.0; полный список — pip freeze у оператора). Без сети, без LLM, read-only, 1 ГБ памяти, таймаут 60 с на пример.
+- Условия сравнения (`conditions` журнала): `{{CONDITIONS_ID}}`; `dataset` — `{{DATASET_ID}}`.
+- Модель исследователей: Claude (Claude Code в контейнере исследователя, подписка Pro), одна на всю кампанию.
+
+## Разрешённые изменения
+Только содержимое каталога своего кандидата `ways/<id>/`: `solve.py`, модули, правила, словари и параметры, в том числе выученные на train. Зашивать значения ПДн, документы или формулировки train запрещено (фамилии, улицы и шаблоны public/private другие).
+
+## Лимит и финализация
+- Лимит предложенных решений: **{{MAX_SOLUTIONS}}** (включая baseline как S01 и все неудачные версии).
+- Каждое предложение получает public-оценку: AUC считается только по public.
+- Лимит минимальный осознанно: исследователь работает на подписке Claude Pro, лимит выбран так, чтобы кампанию можно было довести до конца (ADR-0007).
+- Private: ровно **{{FINALISTS}}** финалистов, итоговых **{{OUTPUT_COUNT}}**; release `{{RELEASE_ID}}`.
+- Правило выбора финалистов: качество на public и train, разнообразие механизмов, устойчивость на подвыборках train, отсутствие подгонки (вывод ревьюера на каждый).
+
+## Адреса (из контейнера исследователя)
+- train: `http://host.docker.internal:{{TRAIN_PORT}}`, токен `/run/secrets/train-token`
+- public: `http://host.docker.internal:{{PUBLIC_PORT}}`, токен `/run/secrets/public-token`
+- private: `http://host.docker.internal:{{PRIVATE_PORT}}`, токен `/run/secrets/private-token` (только `search-readiness` и финальная отправка)
+- журнал: `/search/search.sqlite3`

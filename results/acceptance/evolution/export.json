@@ -1,0 +1,189 @@
+{
+ "schema_version": 2,
+ "campaign": {
+  "max_solutions": 3,
+  "stopped_at": null,
+  "stop_reason": null,
+  "finalization": {
+   "batch_digest": "55552280956714ffebabb1450780249c3a430feabbd3b91bdc5918477c3e05a0",
+   "finalized_at": "2026-11-20T09:48:41.603729+00:00"
+  },
+  "stopped": false,
+  "proposed": 3,
+  "remaining_proposals": 0,
+  "running": [],
+  "completed_measurements": 3
+ },
+ "candidates": [
+  {
+   "bundle_error": null,
+   "candidate_id": "S01",
+   "change": "baseline без изменений",
+   "created_at": "2026-11-20T09:46:54.893552+00:00",
+   "digest": "de6d42641d9dbfdef81b03296099711907166e33be91766dd8fe6cf2bdfd0dfc",
+   "digest_version": 2,
+   "hypothesis": "Стартовая точка",
+   "parents": [],
+   "proposal": 1,
+   "research_resources": {
+    "attribution": "unknown",
+    "total_tokens": null,
+    "model_seconds": null
+   },
+   "resources": {
+    "seconds": 0,
+    "tokens_complete": false,
+    "total_tokens": 0
+   },
+   "resources_source": "unknown",
+   "snapshot_error": null,
+   "solution_id": "S01"
+  },
+  {
+   "bundle_error": null,
+   "candidate_id": "S02",
+   "change": "комментарий в solve.py",
+   "created_at": "2026-11-20T09:48:34.249985+00:00",
+   "digest": "a710d0d7c791f5d036113e44a4124347162b16e2a485c34aebbbba72db10f9d3",
+   "digest_version": 2,
+   "hypothesis": "приёмка: вариант 2",
+   "parents": [
+    "S01"
+   ],
+   "proposal": 2,
+   "research_resources": {
+    "attribution": "unknown",
+    "total_tokens": null,
+    "model_seconds": null
+   },
+   "resources": {
+    "seconds": 0,
+    "tokens_complete": false,
+    "total_tokens": 0
+   },
+   "resources_source": "unknown",
+   "snapshot_error": null,
+   "solution_id": "S02"
+  },
+  {
+   "bundle_error": null,
+   "candidate_id": "S03",
+   "change": "комментарий в solve.py",
+   "created_at": "2026-11-20T09:48:34.352883+00:00",
+   "digest": "763a8b700204e39f4da97a13c675e9a36bc682fd7857e6754e34d55ff66b8d6b",
+   "digest_version": 2,
+   "hypothesis": "приёмка: вариант 3",
+   "parents": [
+    "S01"
+   ],
+   "proposal": 3,
+   "research_resources": {
+    "attribution": "unknown",
+    "total_tokens": null,
+    "model_seconds": null
+   },
+   "resources": {
+    "seconds": 0,
+    "tokens_complete": false,
+    "total_tokens": 0
+   },
+   "resources_source": "unknown",
+   "snapshot_error": null,
+   "solution_id": "S03"
+  }
+ ],
+ "research_usage": null,
+ "measurements": [
+  {
+   "candidate_id": "S01",
+   "comparison": {
+    "conditions_id": "pii-mask-v1+pii-mask-runner-1",
+    "dataset_id": "acceptance-train-subset",
+    "split": "train",
+    "subset_id": "8912da122d426b4e0eb9f7045c6c23b98b21d957be74c0f3d10e94c35d6709ca"
+   },
+   "completion_order": 1,
+   "digest": "de6d42641d9dbfdef81b03296099711907166e33be91766dd8fe6cf2bdfd0dfc",
+   "elapsed_seconds": 0.340953,
+   "error": "evaluation_failed",
+   "evidence": {
+    "evaluation_id": "b1217831baf169ba96bf5f73665515c96b5d5b0b7700753722885a3570a769d2",
+    "record": "/Users/polina/itmo_project/operator/arena/acceptance/logs/S01-train.json"
+   },
+   "finished_at": "2026-11-20T09:46:55.385324+00:00",
+   "job": "http://127.0.0.1:8191",
+   "judge": {
+    "seconds": 0.0,
+    "tokens_complete": true,
+    "total_tokens": 0
+   },
+   "measurement_id": "S01-train",
+   "proposal_count_at_finish": 1,
+   "score": null,
+   "solver": {
+    "seconds": 0.1673969999901601,
+    "tokens_complete": true,
+    "total_tokens": 0
+   },
+   "started_at": "2026-11-20T09:46:55.044371+00:00",
+   "state": "failed"
+  },
+  {
+   "candidate_id": "S01",
+   "comparison": {
+    "conditions_id": "pii-mask-v1+pii-mask-runner-1",
+    "dataset_id": "acceptance-train-subset",
+    "split": "train",
+    "subset_id": "1988aad344ade583633c981fead9c3b6eb8335c904fb7ea75b1820231cbdd5d3"
+   },
+   "completion_order": 2,
+   "digest": "de6d42641d9dbfdef81b03296099711907166e33be91766dd8fe6cf2bdfd0dfc",
+   "elapsed_seconds": 2.601183,
+   "error": null,
+   "evidence": {
+    "evaluation_id": "f4651b8ab461a3c6009978069d796f3c44b73f0a006dba12833d40c6eca9db21",
+    "record": "/Users/polina/itmo_project/operator/arena/acceptance/logs/S01-train-2.json"
+   },
+   "finished_at": "2026-11-20T09:48:13.724426+00:00",
+   "job": "http://127.0.0.1:8191",
+   "judge": {
+    "seconds": 0.352028,
+    "tokens_complete": true,
+    "total_tokens": 0
+   },
+   "measurement_id": "S01-train-2",
+   "proposal_count_at_finish": 1,
+   "score": 0.0,
+   "solver": {
+    "seconds": 2.0663337929872796,
+    "tokens_complete": true,
+    "total_tokens": 0
+   },
+   "started_at": "2026-11-20T09:48:11.123243+00:00",
+   "state": "succeeded"
+  },
+  {
+   "candidate_id": "S01",
+   "comparison": {
+    "conditions_id": "pii-mask-v1+pii-mask-runner-1",
+    "dataset_id": "acceptance-public",
+    "split": "public",
+    "subset_id": "all"
+   },
+   "completion_order": 3,
+   "digest": "de6d42641d9dbfdef81b03296099711907166e33be91766dd8fe6cf2bdfd0dfc",
+   "elapsed_seconds": 12.926597,
+   "error": null,
+   "evidence": null,
+   "finished_at": "2026-11-20T09:48:34.163243+00:00",
+   "job": "",
+   "judge": null,
+   "measurement_id": "S01-public",
+   "proposal_count_at_finish": 1,
+   "score": 0.0,
+   "solver": null,
+   "started_at": "2026-11-20T09:48:21.236646+00:00",
+   "state": "succeeded"
+  }
+ ]
+}

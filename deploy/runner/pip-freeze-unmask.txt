@@ -1,0 +1,5 @@
+DAWG2-Python==0.9.0
+pymorphy3==2.0.4
+pymorphy3-dicts-ru==2.4.417150.4580142
+razdel==0.5.0
+setuptools==84.2.1

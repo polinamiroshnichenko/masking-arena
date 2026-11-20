@@ -1,0 +1,13 @@
+DAWG-Python==0.7.2
+docopt==0.6.2
+intervaltree==3.2.1
+ipymarkup==0.9.0
+natasha==1.6.0
+navec==0.10.0
+numpy==2.5.5
+pymorphy2==0.9.1
+pymorphy2-dicts-ru==2.4.417127.4579844
+razdel==0.5.0
+slovnet==0.6.0
+sortedcontainers==2.4.0
+yargy==0.16.0
