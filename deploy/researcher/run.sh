@@ -29,7 +29,7 @@ docker run --rm -i --name "pii-researcher-$C-$TS" \
   -v "$O/secrets/private-token:/run/secrets/private-token:ro" \
   -v "pii-researcher-$C-home:/home/researcher/.claude" \
   -e CLAUDE_CODE_OAUTH_TOKEN="$(cat "$TOKEN_FILE")" \
-  pii-researcher:1 "${RESUME[@]}" -p "$PROMPT" --model "$MODEL" --effort "$EFFORT" \
+  pii-researcher:1 ${RESUME[@]+"${RESUME[@]}"} -p "$PROMPT" --model "$MODEL" --effort "$EFFORT" \
   --permission-mode bypassPermissions --output-format stream-json --verbose \
   > "$O/logs/researcher-$TS.jsonl" 2> "$O/logs/researcher-$TS.err" || true
 echo "лог: $O/logs/researcher-$TS.jsonl"

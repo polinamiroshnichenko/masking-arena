@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 300" role="img" aria-label="Кампания mask: лучший public-score от номера решения">
+<style>text{font:12px system-ui,sans-serif;fill:#4a5563}.g{stroke:#e3e7ec}.s{fill:none;stroke:#0f5c6e;stroke-width:2}.p{fill:#0f5c6e}.f{fill:#c8402a}</style>
+<text x="52" y="16" font-weight="600">Кампания mask: лучший public-score от номера решения</text>
+<line class="g" x1="52" x2="624" y1="260.0" y2="260.0"/><text x="46" y="264.0" text-anchor="end">0.00</text>
+<line class="g" x1="52" x2="624" y1="202.0" y2="202.0"/><text x="46" y="206.0" text-anchor="end">0.26</text>
+<line class="g" x1="52" x2="624" y1="144.0" y2="144.0"/><text x="46" y="148.0" text-anchor="end">0.52</text>
+<line class="g" x1="52" x2="624" y1="86.0" y2="86.0"/><text x="46" y="90.0" text-anchor="end">0.78</text>
+<line class="g" x1="52" x2="624" y1="28.0" y2="28.0"/><text x="46" y="32.0" text-anchor="end">1.05</text>
+<text x="75.8" y="276" text-anchor="middle">S01</text>
+<text x="123.5" y="276" text-anchor="middle">S02</text>
+<text x="171.2" y="276" text-anchor="middle">S03</text>
+<text x="218.8" y="276" text-anchor="middle">S04</text>
+<text x="266.5" y="276" text-anchor="middle">S05</text>
+<text x="314.2" y="276" text-anchor="middle">S06</text>
+<text x="361.8" y="276" text-anchor="middle">S07</text>
+<text x="409.5" y="276" text-anchor="middle">S08</text>
+<text x="457.2" y="276" text-anchor="middle">S09</text>
+<text x="504.8" y="276" text-anchor="middle">S10</text>
+<text x="552.5" y="276" text-anchor="middle">S11</text>
+<text x="600.2" y="276" text-anchor="middle">S12</text>
+<text x="338.0" y="294" text-anchor="middle">номер предложенного решения</text>
+<path class="s" d="M52.0,141.5L99.7,141.5L99.7,45.2L147.3,45.2"/>
+<circle class="p" cx="75.8" cy="141.5" r="4"><title>S01: 0.5346</title></circle>
+<circle class="p" cx="123.5" cy="45.2" r="4"><title>S02: 0.9689</title></circle>
+</svg>
